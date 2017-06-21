@@ -72,7 +72,7 @@ a[href] {color:red;}
 ```
 * 后代选择器
 ```
-h1 em {color:red;}
+h1 em {color:red;}s
 ```
 * 子元素选择器
 ```
