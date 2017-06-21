@@ -40,6 +40,35 @@
 
 ## css知识点
 
+**索引**
+
+1. [css 选择器](css 选择器)
+2. [如何让几个div水平排列](#如何让几个div水平排列)
+3. [怎么清除浮动](#怎么清除浮动)
+4. [浮动的原理](#浮动的原理)
+5. [css垂直居中方法](#css垂直居中方法)
+
+### css 选择器
+* 元素选择器
+```
+html {color:black;}
+h1 {color:blue;}
+h2 {color:silver;}
+```
+* id选择器
+```
+#intro {color:black;}
+```
+* 类选择器
+```
+.important {color:black;}
+```
+* 属性选择器
+* 后代选择器
+* 相邻兄弟选择器
+* 伪类选择器
+
+
 ### 如何让几个div水平排列
 
 * css float
@@ -61,7 +90,7 @@
 
 * 使用 Line-Height 垂直居中图片
 
-  html
+html
 
 ```
 <div id="parent">
@@ -69,7 +98,7 @@
 </div>
 ```
 
-  css
+css
 
 ```
 #parent {
