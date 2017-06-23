@@ -106,17 +106,11 @@ h1+em {color:red;}
 
 * 使用 Line-Height 垂直居中图片
 
-html
-
 ```
 <div id="parent">
     <img src="image.png" alt="" />
 </div>
-```
 
-css
-
-```
 #parent {
     line-height: 200px;
 }
@@ -127,17 +121,12 @@ css
 ```
 * CSS表格法
 
-html
 
 ```
 <div id="parent">
     <div id="child">Text here</div>
 </div>
-```
 
-css
-
-```
 #parent {
     display: table;
 }
@@ -150,17 +139,11 @@ css
 
 * 绝对定位和负边距法
 
-html
-
 ```
 <div id="parent">
     <div id="child">Content here</div>
 </div>
-```
 
-css
-
-```
 #parent {
     position: relative
 }
@@ -181,17 +164,11 @@ css
 
  这种方法通过设置上下padding相等来实现垂直居中。
 
-  html
-
 ```
 <div id="parent">
     <div id="child">Content here</div>
 </div>
-```
 
-  css
-
-```
 #parent {
     padding: 5% 0;
 }
@@ -203,6 +180,38 @@ css
 
   上面的代码使用了相对尺寸，然而如果需要指定元素尺寸时，就需要使用绝对尺寸并做一个简单的计算了。例如，如果指定父元素高度为400px，子元素高度为100px，要实现垂直居中需要设置父元素的上下padding为150px。
 
+### 实现布局 左侧固定尺寸，右侧自适应
+![如图](../img/1.png)
+
+**html**
+
+```
+<div class=container>
+<div class='left'>left width:200px</div>
+<div class='right'>right width:自适应</div>
+</div>
+```
+* 使用flex 布局
+
+```
+.container{
+            display:flex;
+            width: 100%;
+            height:200px;
+            border: 1px solid #000;
+        }
+        .left{
+            width: 200px;
+            height: 200px;
+            border: 1px solid orange;
+        }
+        .right{
+            flex: 1;
+            width: 100%;
+            height: 200px;
+            border: 1px solid green;
+        }
+```
 
 
 ## html5
