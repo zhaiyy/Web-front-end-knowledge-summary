@@ -291,6 +291,17 @@ h1+em {color:red;}
 10. [函数节流](#函数节流)
 11. [设计模式](#设计模式)
 12. [get && post](#get&&post)
+13. [如何进行跨域](#如何进行跨域)
+14. [JavaScript把一个参数从页面A传递给页面B，进行某些操作，然后由页面B回传给页面A](#JavaScript把一个参数从页面A传递给页面B，进行某些操作，然后由页面B回传给页面A)
+15. [JSON是什么?](#JSON是什么?)
+16. [如何把JS对象与JSON对象相互转换](#如何把JS对象与JSON对象相互转换)
+17. [数组和对象之间的关系是什么](#数组和对象之间的关系是什么)
+18. [call和apply的作用的区别是什么](#call和apply的作用的区别是什么)
+19. [eval的作用是什么](#eval的作用是什么)
+20. [如何严格的判断一个数据是数组（Array）类的实例](#如何严格的判断一个数据是数组（Array）类的实例)
+21. [JS中异常捕获](#JS中异常捕获)
+22. [实现对函数内置的arguments对象进行排序](#实现对函数内置的arguments对象进行排序)
+23. [为什么文档集合不能直接借用数组类的sort方法进行排序呢？](#为什么文档集合不能直接借用数组类的sort方法进行排序呢？)
 ----------------------------------
 ### 什么是事件冒泡
 
@@ -605,6 +616,128 @@ get请求，浏览器会把header ，data数据一起发送出去，服务器响
 
 post 请求，首先会吧 header 发送出去，然后服务器返回100 continue ，浏览器再把data发送给服务器，服务器响应 200
 
+### 如何进行跨域
+
+只要协议、域名、端口有任何一个不同，都被当作是不同的域
+
+* 是通过在同源域名下架设一个代理服务器来转发，JavaScript负责把请求发送到代理服务器，代理服务器再把结果返回，这样就遵守了浏览器的同源策略。这种方式麻烦之处在于需要服务器端额外做开发
+* JSONP 它有个限制，只能用GET请求，并且要求返回JavaScript。这种方式跨域实际上是利用了浏览器允许跨域引用JavaScript资源。
+
+  即Web页面上调用Js文件时可以不受跨域限制的影响，不仅如此，凡是拥有'src'这个属性的标签都拥有跨域的能力，比如：script, img, iframe标签。
+
+```
+var jsonp = document.createElement('script');
+jsonp.type = 'text/javascript';
+jsonp.src = 'http://www.example.com/remote.js';
+document.getElementsByTagName('head')[0].appendChild(jsonp);
+
+```
+
+* 通过CORS跨域 ，CORS（Cross-Origin Resource Sharing）跨域资源共享，定义了必须在访问跨域资源时，浏览器与服务器应该如何沟通。CORS背后的基本思想就是使用自定义的HTTP头部让浏览器与服务器进行沟通，从而决定请求或响应是应该成功还是失败。
+
+**因此，实现CORS通信的关键是服务器。只要服务器实现了CORS接口，就可以跨源通信。**
+
+相关Ajax代码可能如下所示：
+
+```
+<script type="text/javascript"\>
+
+ var xhr = new XMLHttpRequest();
+
+ xhr.open("￼GET", "http://segmentfault.com/u/trigkit4/",true);
+
+ xhr.send();
+
+</script>
+
+```
+
+服务器端对于CORS的支持，主要就是通过设置Access-Control-Allow-Origin来进行的。如果浏览器检测到相应的设置，就可以允许Ajax进行跨域的访问。
+
+* CORS和JSONP对比
+  * JSONP只能实现GET请求，而CORS支持所有类型的HTTP请求。
+  * 使用CORS，开发者可以使用普通的XMLHttpRequest发起请求和获得数据，比起JSONP有更好的错误处理。
+  * JSONP主要被老的浏览器支持，它们往往不支持CORS，而绝大多数现代浏览器都已经支持了CORS）。
+
+CORS与JSONP相比，无疑更为先进、方便和可靠。
+
+### JavaScript把一个参数从页面A传递给页面B，进行某些操作，然后由页面B回传给页面A
+
+
+1. 通过 url 传递
+2. html5的话可以用 sessionStorage 或 localStorage很容易的
+
+  * sessionStorage 是会话存储，关闭浏览器就没了
+
+  * localStorage 是持久化存储，完全可以替代cookie 存储空间更大。
+
+  实现方法
+
+  存：sessionStorage["par1"]="123";
+
+  取：sessionStorage["par1"]
+
+  localStorage实现方法和sessionStorage一样
+
+### JSON是什么?
+
+Json是一种轻量级的数据交换格式
+
+基本格式：
+
+数据在键值对中，数据有逗号隔开，花括号保存对象，方括号保存数组。
+
+### 如何把JS对象与JSON对象相互转换
+
+* 把对象转换成json字符串：
+
+`JSON.stringify(obj1)`;
+
+* 把JSON字符串转换成js对象：
+
+`JSON.parse(strJSON)`;
+
+注：如果字符串不是json格式的，会报错
+
+### 数组和对象之间的关系是什么
+
+* 数组是从对象中延伸出来的，数组就是对象
+* 数据集合既可以用数组表示又可以用对象表示
+* 数组是有序的集合，对象是无序的
+* 数组中的对象是没有名称的，对象中的数据是有名称的
+* 数组是一种更高效的优化的对象，速度快，效率更高，Object类上的比较少
+
+### call和apply的作用的区别是什么
+
+作用：都是用来改变this关键字的指针的
+
+区别：Call接收参数是一个一个接受的，apply是数组的形式接收的
+
+### eval的作用是什么
+
+数据转换引擎，把字符串转换成js表达式，并且让代码执行
+
+
+### 如何严格的判断一个数据是数组（Array）类的实例
+`function isArray(val){return val instanceof Array}`
+
+### JS中异常捕获
+`try{}catch(e){}finally{}`
+
+### 实现对函数内置的arguments对象进行排序
+```
+[].sort.call(arguments,function(a,b){
+
+return a-b;
+
+})
+```
+
+### 为什么文档集合不能直接借用数组类的sort方法进行排序呢？
+
+因为其为类数组，但不是真正的数组，所有就不能直接借用sort的方法
+
+
 ## jquery
 
 **索引**
@@ -672,68 +805,7 @@ Content-Type，内容类型，一般是指网页中存在的Content-Type，用�
 * image/jpeg
 * image/gif
 
-# 如何进行跨域
 
-只要协议、域名、端口有任何一个不同，都被当作是不同的域
-
-* 是通过在同源域名下架设一个代理服务器来转发，JavaScript负责把请求发送到代理服务器，代理服务器再把结果返回，这样就遵守了浏览器的同源策略。这种方式麻烦之处在于需要服务器端额外做开发
-* JSONP 它有个限制，只能用GET请求，并且要求返回JavaScript。这种方式跨域实际上是利用了浏览器允许跨域引用JavaScript资源。
-
-  即Web页面上调用Js文件时可以不受跨域限制的影响，不仅如此，凡是拥有'src'这个属性的标签都拥有跨域的能力，比如：script, img, iframe标签。
-
-```
-var jsonp = document.createElement('script');
-jsonp.type = 'text/javascript';
-jsonp.src = 'http://www.example.com/remote.js';
-document.getElementsByTagName('head')[0].appendChild(jsonp);
-
-```
-
-* 通过CORS跨域 ，CORS（Cross-Origin Resource Sharing）跨域资源共享，定义了必须在访问跨域资源时，浏览器与服务器应该如何沟通。CORS背后的基本思想就是使用自定义的HTTP头部让浏览器与服务器进行沟通，从而决定请求或响应是应该成功还是失败。
-
-**因此，实现CORS通信的关键是服务器。只要服务器实现了CORS接口，就可以跨源通信。**
-
-相关Ajax代码可能如下所示：
-
-```
-<script type="text/javascript"\>
-
- var xhr = new XMLHttpRequest();
-
- xhr.open("￼GET", "http://segmentfault.com/u/trigkit4/",true);
-
- xhr.send();
-
-</script\>
-
-```
-
-服务器端对于CORS的支持，主要就是通过设置Access-Control-Allow-Origin来进行的。如果浏览器检测到相应的设置，就可以允许Ajax进行跨域的访问。
-
-* CORS和JSONP对比
-  * JSONP只能实现GET请求，而CORS支持所有类型的HTTP请求。
-  * 使用CORS，开发者可以使用普通的XMLHttpRequest发起请求和获得数据，比起JSONP有更好的错误处理。
-  * JSONP主要被老的浏览器支持，它们往往不支持CORS，而绝大多数现代浏览器都已经支持了CORS）。
-
-CORS与JSONP相比，无疑更为先进、方便和可靠。
-
-# JavaScript把一个参数从页面A传递给页面B，进行某些操作，然后由页面B回传给页面A
-
-
-1. 通过 url 传递
-2. html5的话可以用 sessionStorage 或 localStorage很容易的
-
-  * sessionStorage 是会话存储，关闭浏览器就没了
-
- * localStorage 是持久化存储，完全可以替代cookie 存储空间更大。
-
-  实现方法
-
-  存：sessionStorage["par1"]="123";
-
-  取：sessionStorage["par1"]
-
-  localStorage实现方法和sessionStorage一样
 
 # 从URL输入到页面展现发生了什么?
 
@@ -745,66 +817,6 @@ CORS与JSONP相比，无疑更为先进、方便和可靠。
 6. 连接结束
 
 
-# JSON是什么？(JSON和JavaScript对象有什么区别？)如何把JS对象转化为JSON字符串？又如何把JSON字符串转化为JavaScript对象？
-
-Json是一种轻量级的数据交换格式
-
-基本格式：
-
-数据在键值对中，数据有逗号隔开，花括号保存对象，方括号保存数组。
-
-把对象转换成json字符串：
-
-JSON.stringify(obj1);
-
-把JSON字符串转换成js对象：
-
-JSON.parse(strJSON);
-
-注：如果字符串不是json格式的，会报错
-
-1. 数组和对象之间的关系是什么？
-
-* 数组是从对象中延伸出来的，数组就是对象
-* 数据集合既可以用数组表示又可以用对象表示
-* 数组是有序的集合，对象是无序的
-* 数组中的对象是没有名称的，对象中的数据是有名称的
-* 数组是一种更高效的优化的对象，速度快，效率更高，Object类上的比较少
-
-# call和apply的作用的区别是什么？
-
-作用：都是用来改变this关键字的指针的
-
-区别：Call接收参数是一个一个接受的，apply是数组的形式接收的
-
-# eval的作用是什么?
-
-数据转换引擎，把字符串转换成js表达式，并且让代码执行
-
-# alert({})弹出的结果是什么，为什么？
-
-[object Object]
-
-[object 类名] Object.prototype.tostring
-
-# 如何严格的判断一个数据是数组（Array）类的实例
-`function isArray(val){return val instanceof Array}`
-
-# 说一说JS中异常捕获是用什么代码实现的？
-`try{}catch(e){}finally{}`
-
-# 用什么方法实现对函数内置的arguments对象进行排序？
-```
-[].sort.call(arguments,function(a,b){
-
-return a-b;
-
-})
-```
-
-# 为什么文档集合不能直接借用数组类的sort方法进行排序呢？
-
-因为其为类数组，但不是真正的数组，所有就不能直接借用sort的方法
 
 
 # es6的 新增的 特性
