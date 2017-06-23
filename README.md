@@ -195,22 +195,70 @@ h1+em {color:red;}
 
 ```
 .container{
-            display:flex;
-            width: 100%;
-            height:200px;
-            border: 1px solid #000;
-        }
-        .left{
-            width: 200px;
-            height: 200px;
-            border: 1px solid orange;
-        }
-        .right{
-            flex: 1;
-            width: 100%;
-            height: 200px;
-            border: 1px solid green;
-        }
+    display:flex;
+    width: 100%;
+    height:200px;
+    border: 1px solid #000;
+}
+.left{
+    width: 200px;
+    height: 200px;
+    border: 1px solid orange;
+}
+.right{
+    flex: 1;
+    width: 100%;
+    height: 200px;
+    border: 1px solid green;
+}
+```
+* 相对定位
+
+```
+.container{
+    position:relative;
+    width: 100%;
+    height:200px;
+    border: 1px solid #000;
+}
+.left{
+    position:absolute ;
+    top: 0;
+    left: 0;
+    width: 200px;
+    height: 200px;
+    border: 1px solid orange;
+}
+.right{
+    position: absolute;
+    top: 0;
+    left: 200px;
+    width: 100%;
+    height: 200px;
+    border: 1px solid green;
+}
+```
+* 浮动布局
+
+```
+.container{
+    width: 100%;
+    height:200px;
+    border: 1px solid #000;
+    clear: both;
+}
+.left{
+    float: left;
+    width: 200px;
+    height: 200px;
+    border: 1px solid orange;
+}
+.right{
+    width: auto;
+    height: 200px;
+    padding-left: 200px;
+}
+
 ```
 
 
