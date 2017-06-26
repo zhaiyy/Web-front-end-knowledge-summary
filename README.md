@@ -382,17 +382,17 @@ Flex 是 Flexible Box 的缩写，意为"弹性布局"，用来为盒状模型�
 
 ### css3 Animate/transition/translate 区别？
 
-1、css3中没有animate，只有animation（动画属性）。使用方法：用@keyframes定义自定义动画，用animation引用该动画。最简单的写法：
+1. css3中没有animate，只有animation（动画属性）。使用方法：用@keyframes定义自定义动画，用animation引用该动画。最简单的写法：
 `animation：name（自定义动画名称） duration（持续时间）;`
 例：
 `animation：scroll 2s;`
 意思是在2s内运行自定义的scroll动画。
-2、transition（过渡属性）。使css属性在一段时间内平滑过渡。最简单写法：
+2. transition（过渡属性）。使css属性在一段时间内平滑过渡。最简单写法：
 `transition：property（需要过渡的属性） duration（持续时间）;`
 例：
 `transition：background-color 2s;`
 意思是用2s时间过渡背景颜色。该属性比animation低级一些。不能自定义动画，只是模拟。
-3、translate（位移）是transform（变换属性）的一种。最简单写法为：
+3. translate（位移）是transform（变换属性）的一种。最简单写法为：
 `transform：translate（x）;`
 例：
 `transform：translate（100px）;`
