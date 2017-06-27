@@ -921,7 +921,7 @@ map将遍历的结果映射到一个新的数组，原来的数组不变。each�
 **索引**
 
 1. [es6新增的特性](#es6新增的特性)
-2. [简单介绍一下 const/let](#简单介绍一下const/let)
+2. [简单介绍一下 const/let](#es6-2)
 3. [简单介绍一下es6中的promise](#简单介绍一下es6中的promise)
 ----------------------------------
 
@@ -935,7 +935,7 @@ map将遍历的结果映射到一个新的数组，原来的数组不变。each�
 * class extents super
 * import
 
-### 简单介绍一下const/let
+### <h3 id='es6-2'>简单介绍一下const/let</h3>
 
 * const,let 是由原本es5中的 var 分解来的
 * let 是进行 变量的定义，由于 js没有块级作用域的概念，所以 var定义 变量的时候，会出现 作用域泄露的问题。用let定义变量 只会在自己当前的块级作用域内生效。
@@ -994,6 +994,7 @@ fn3执行，并且fn3的this指针指向fn1 相当于fn1.fn3();fn1.call();
 3、面向对象的编程中，类方法里的this是谁，就相当于谁在执行这个方法
 
 4、call本身也是Function类的实例，也就是说call也可以执行call的方法
+
 **2.以下代码执行结果：**
 ```
     'use strick'
@@ -1034,7 +1035,8 @@ fn3执行，并且fn3的this指针指向fn1 相当于fn1.fn3();fn1.call();
       console.log(a)
     },0);
     var date1 = new Date();
-    while((new Date().getTime()-date1.getTime())<=10000){};               console.log(a);
+    while((new Date().getTime()-date1.getTime())<=10000){};
+    console.log(a);
     a='2';
 ```
 几乎同时输出1和2
@@ -1102,9 +1104,9 @@ vue老版本中用`$dispatch`，子组件传递把需要向父组件传递的值
 
 **索引**
 
-1. [yarn && npm](#yarn && npm)
+1. [yarn && npm](#npm-1)
 ----------------------------------
-### yarn && npm
+### <h3 id='npm-1'>yarn && npm</h3>
 
 其实本质上yarn 也是从npm仓库进行数据的拉去，但为什么会 用yarn
 
@@ -1115,8 +1117,21 @@ vue老版本中用`$dispatch`，子组件传递把需要向父组件传递的值
 
 **索引**
 
-1. [](#)
+1. [常用的NodeJS模块](#nodejs-1)
 ----------------------------------
+
+### <h3 id='nodejs-1'>常用的NodeJS模块</h3>
+
+* MVC框架 - Express
+* 前端模板 - EJS
+* Node.js  http 模块,http 模块主要用于搭建 HTTP 服务端和客户端，使用 HTTP 服务器或客户端功能必须调用 http 模块
+* HTTP调用 Request
+* 异步流程控制 - Async
+* Node.js OS 模块,提供了一些基本的系统操作函数
+* Node.js Path 模块,提供了一些用于处理文件路径的小工具
+* 数据库驱动 - Mongoose
+
+
 ## 计算机网络
 
 **索引**
@@ -1245,6 +1260,8 @@ UDP和TCP协议的主要区别是两者在如何实现信息的可靠传递方�
 9. [冒泡排序](#冒泡排序)
 10. [插入排序](#插入排序)
 11. [去首位空格](#去首位空格)
+12. [求和函数](#求和函数)
+13. [两个有序数组合成一个有序数组](#两个有序数组合成一个有序数组)
 ----------------------------------
 
 ### 用javascript 语言,手工实现 repeat 函数
@@ -1628,6 +1645,44 @@ function indexAry(ele,ary){
             return str.replace(reg, '');
         }
     }
+
+```
+
+### 求和函数
+   sum(2,3)(5),正确返回true，错误返回false
+
+```
+  function sum(a,b){
+    return function(total){
+      return a+b == total;
+    }
+  }
+```
+
+### 两个有序数组合成一个有序数组
+归并排序，思路：
+1. 两个有序数组进行首项比较，把首项小的放入排序数组，当前数组删除此项
+2. 一次进行首项比较，直到又一个数组长度为0
+3. 长度不为0的数组元素，肯定是整个要排序数组中最大的元素
+4. 直接进行数组拼接
+
+```
+function mergeSort(left,right){
+    var lh = left.length,rh = right.length;
+    var soryAry = [];
+    if(lh == 0 || rh == 0)return left.concat(right);
+    while (left.length !=0 && right.length !=0) {
+         if(left[0]>right[0]){
+                soryAry.push(right.shift(0));
+            }else if(left[0]< right[0]){
+                 soryAry.push(left.shift(0));
+            }else if(left[0]== right[0]){
+                soryAry.push(left.shift(0));
+                soryAry.push(right.shift(0));
+            }
+    }
+    return soryAry.concat(left.concat(right));;
+}
 
 ```
 
