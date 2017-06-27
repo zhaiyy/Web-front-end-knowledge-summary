@@ -220,11 +220,11 @@ h1+em {color:red;}
 * 相对定位
 
 ```
-.container{
-    position:relative;
-    width: 100%;
-    height:200px;
-    border: 1px solid #000;
+.container {
+  position: relative;
+  width: 100% ;
+  height: 200px;
+  border: 1px solid #000;
 }
 .left{
     position:absolute ;
@@ -246,11 +246,11 @@ h1+em {color:red;}
 * 浮动布局
 
 ```
-.container{
-    width: 100%;
-    height:200px;
-    border: 1px solid #000;
-    clear: both;
+.container {
+  width: 100% ;
+  height: 200px;
+  border: 1px solid #000;
+  clear: both;
 }
 .left{
     float: left;
@@ -263,7 +263,6 @@ h1+em {color:red;}
     height: 200px;
     padding-left: 200px;
 }
-
 ```
 
 ### <h3 id='css-7'>css flex 使用</h3>
@@ -284,9 +283,9 @@ Flex 是 Flexible Box 的缩写，意为"弹性布局"，用来为盒状模型�
 例：
 ```
 .container {
- display: flex;
- display: -webkit-flex;
- border: 4px solid \#000;
+  display: flex;
+  display: -webkit - flex;
+  border: 4 px solid\ #000;
 }
 
 .initial {
@@ -303,14 +302,13 @@ Flex 是 Flexible Box 的缩写，意为"弹性布局"，用来为盒状模型�
  border: 2px solid blue;
 
 }
-
-.flex1{
- flex: 1;
- border: 2px solid green;
+.flex1 {
+  flex: 1;
+  border: 2 px solid green;
 }
-.flex2{
- flex: 2;
- border: 2px solid orange;
+.flex2 {
+  flex: 2;
+  border: 2 px solid orange;
 }
 ```
 ![](./img/4.png)
@@ -513,20 +511,19 @@ A：一般我们在元素上绑定事件后，是靠用户在这些元素上的�
 ie下的例子：
 
 ```
-
 //document上绑定自定义事件ondataavailable
 
-document.attachEvent('ondataavailable','function (event){
+document.attachEvent('ondataavailable', 'function (event){
 
-   alert(event.eventType);
+alert(event.eventType);
 
 });
 
-var obj=document.getElementById("obj");
+var obj = document.getElementById("obj");
 
 //obj元素上绑定click事件
 
-obj.attachEvent('onclick','function (event){
+obj.attachEvent('onclick', 'function (event){
 
 alert(event.eventType);
 
@@ -540,11 +537,11 @@ event.eventType = 'message';
 
 //触发document上绑定的自定义事件ondataavailable
 
-document.fireEvent('ondataavailable',event);
+document.fireEvent('ondataavailable', event);
 
 //触发obj元素上绑定click事件
 
-document.getElementById("test").onclick = function (){
+document.getElementById("test").onclick = function() {
 
   obj.fireEvent('onclick', event);
 
@@ -556,14 +553,13 @@ document.getElementById("test").onclick = function (){
 高级浏览器（chrome,firefox等）的例子：
 
 ```
-
 //document上绑定自定义事件ondataavailable
 
-document.addEventListener('ondataavailable',function (event){
+document.addEventListener('ondataavailable', function(event) {
 
-   alert(event.eventType);
+  alert(event.eventType);
 
-},false);
+}, false);
 
 var obj = document.getElementById("obj");
 
@@ -571,9 +567,9 @@ var obj = document.getElementById("obj");
 
 obj.addEventListener('click`, function (event){
 
-    alert(event.eventType);
+alert(event.eventType);
 
-},false);
+}, false);
 
 //调用document对象的 createEvent 方法得到一个event的对象实例。
 
@@ -583,8 +579,8 @@ var event = document.createEvent('HTMLEvents');
 
 //事件类型，是否冒泡，是否阻止浏览器的默认行为
 
-event.initEvent("ondataavailable",true,true);
-event.eventType ='message';
+event.initEvent("ondataavailable", true, true);
+event.eventType = 'message';
 
 //触发document上绑定的自定义事件ondataavailable
 
@@ -592,15 +588,15 @@ document.dispatchEvent(event);
 
 var event1 = document.createEvent('HTMLEvents');
 
-event1.initEvent("click",true,true);
+event1.initEvent("click", true, true);
 
 event1.eventType = 'message';
 
 //触发obj元素上绑定click事件
 
-document.getElementById("test").onclick = function (){
+document.getElementById("test").onclick = function() {
 
-   obj.dispatchEvent(event1);
+  obj.dispatchEvent(event1);
 
 };
 ```
@@ -694,17 +690,19 @@ javascript继承机制是基于原型，而不是类。简单白话理解即：B
 
 ```
  //lazyload();
- debounce(lazyload,window);
+ debounce(lazyload, window);
  };
- function debounce(method,context){
-    clearTimeout(method.timeout);
-    method.timeout = setTimeout(function(){
-          method.call(context);
-    },500);
+
+ function debounce(method, context) {
+   clearTimeout(method.timeout);
+   method.timeout = setTimeout(function() {
+     method.call(context);
+   }, 500);
  }
- function lazyload(){
- console.log("scroll执行了"+scrollnum);
-  }
+
+ function lazyload() {
+   console.log("scroll执行了" + scrollnum);
+ }
 ```
 
  underscore **delay**
@@ -785,7 +783,6 @@ var jsonp = document.createElement('script');
 jsonp.type = 'text/javascript';
 jsonp.src = 'http://www.example.com/remote.js';
 document.getElementsByTagName('head')[0].appendChild(jsonp);
-
 ```
 
 * 通过CORS跨域 ，CORS（Cross-Origin Resource Sharing）跨域资源共享，定义了必须在访问跨域资源时，浏览器与服务器应该如何沟通。CORS背后的基本思想就是使用自定义的HTTP头部让浏览器与服务器进行沟通，从而决定请求或响应是应该成功还是失败。
@@ -880,7 +877,8 @@ Json是一种轻量级的数据交换格式
 `try{}catch(e){}finally{}`
 
 ### 实现对函数内置的arguments对象进行排序
-```
+``
+`
 [].sort.call(arguments,function(a,b){
 
 return a-b;
@@ -948,7 +946,7 @@ promise es6新增的异步加载
 ```
 var promise = new Promise(function(resolve, reject) {
 
-  if (/\* 异步操作成功 \*/){
+  if (/\* 异步操作成功 \*/) {
 
     resolve(value);
   } else {
@@ -970,13 +968,19 @@ promise.then(function(value) {
 
 **1.以下代码执行结果：**
 ```
-function fn1(){alert(1)};function fn2(){alert(2)};
+function fn1() {
+  alert(1)
+};
 
-fn3=fn2.call; //这只是一个简单的赋值
+function fn2() {
+  alert(2)
+};
 
-fn2.call(fn1);//请问输出什么结果，为什么2
+fn3 = fn2.call; //这只是一个简单的赋值
 
-fn3.call(fn1);//请问输出什么结果，为什么1
+fn2.call(fn1); //请问输出什么结果，为什么2
+
+fn3.call(fn1); //请问输出什么结果，为什么1
 ```
 
 表示：
@@ -998,29 +1002,30 @@ fn3执行，并且fn3的this指针指向fn1 相当于fn1.fn3();fn1.call();
 **2.以下代码执行结果：**
 ```
     'use strick'
-   (function(){
-     var a=b=5
-   })();
-   console.log(b);
-   console.log(a);
+    (function() {
+      var a = b = 5
+    })();
+    console.log(b);
+    console.log(a);
    ```
 
 运行结果：`Uncauht ReferenceError:a is not defined at 6
 
-**3.**以下代码执行结果：****
+**3.以下代码执行结果：**
 ```
-    function a(){
+    function a() {
       alert(x);
-      var x=2;
+      var x = 2;
       x++;
       alert(x);
     }
-    function b(){
+
+    function b() {
       alert(x);
       x++;
       alert(x);
     }
-    if(0<100<(0+4)){
+    if (0 < 100 < (0 + 4)) {
       a();
     } else {
       b();
@@ -1030,31 +1035,31 @@ fn3执行，并且fn3的this指针指向fn1 相当于fn1.fn3();fn1.call();
 
 **4.以下代码执行结果：**
 ```
-    var a=1;
-    setTimeout(function(){
+    var a = 1;
+    setTimeout(function() {
       console.log(a)
-    },0);
+    }, 0);
     var date1 = new Date();
-    while((new Date().getTime()-date1.getTime())<=10000){};
+    while ((new Date().getTime() - date1.getTime()) <= 10000) {};
     console.log(a);
-    a='2';
+    a = '2';
 ```
 几乎同时输出1和2
 
 **5.以下程序可能的输出顺序**
 ```
-    window.setTimeout(function(){
+    window.setTimeout(function() {
       console.log("1")
-    },1);
-    window.setTimeout(function(){
+    }, 1);
+    window.setTimeout(function() {
       console.log("2")
-    },2);
-    window.setTimeout(function()
+    }, 2);
+    window.setTimeout(function() {
       console.log("2")
-    },3);
-    window.requestAnimationFrame(function(){
+    }, 3);
+    window.requestAnimationFrame(function() {
       console.log("4")
-    },4);
+    }, 4);
 ```
 
 A.1,2,3,4
@@ -1248,15 +1253,15 @@ UDP和TCP协议的主要区别是两者在如何实现信息的可靠传递方�
 ## 算法程序
 
 **索引**
-
-1. [用javascript 语言,手工实现 repeat 函数](#用javascript 语言,手工实现 repeat 函数)
+用javas
+1. [用javascript 语言,手工实现 repeat 函数](#code-1)
 2. [使用原生javacript实现事件代理](#使用原生javacript实现事件代理)
 3. [快速排序](#快速排序)
 4. [数组去重](#数组去重)
 5. [将url的查询参数解析成字典对象](#将url的查询参数解析成字典对象)
-6. [使用js实现bind,trigger](#使用js实现bind,trigger)
+6. [使用js实现bind,trigger](#code-6)
 7. [判断一个字符串是不是数字字符串](#判断一个字符串是不是数字字符串)
-8. [一个有序数组，输出指定值（可能重复）的下标](#一个有序数组，输出指定值（可能重复）的下标)
+8. [一个有序数组，输出指定值（可能重复）的下标](#code-8)
 9. [冒泡排序](#冒泡排序)
 10. [插入排序](#插入排序)
 11. [去首位空格](#去首位空格)
@@ -1264,7 +1269,7 @@ UDP和TCP协议的主要区别是两者在如何实现信息的可靠传递方�
 13. [两个有序数组合成一个有序数组](#两个有序数组合成一个有序数组)
 ----------------------------------
 
-### 用javascript 语言,手工实现 repeat 函数
+### <h3 id='code-1'>用javascript 语言,手工实现 repeat 函数</h3>
  两个参数:
    1.要重复的原始字符串
    2.需要重复的次数
@@ -1272,36 +1277,36 @@ UDP和TCP协议的主要区别是两者在如何实现信息的可靠传递方�
    repeat ('a', 3) => 'aaa'
 
 ```
-function repeat (str, count) {
- var s ='';
- for(let i=0;i<count;i++){
- s += str;
- }
- return s
+function repeat(str, count) {
+  var s = '';
+  for (let i = 0; i < count; i++) {
+    s += str;
+  }
+  return s
 };
-repeat ('a', 3) ;
+repeat('a', 3);
 
 //用递归实现
 
-function repeat (str, count) {
+function repeat(str, count) {
 
- return rep(str,'',count);
+  return rep(str, '', count);
 
- function rep(oldstr,str,count){
+  function rep(oldstr, str, count) {
 
- if (count == 0) {
+    if (count == 0) {
 
- return str;
+      return str;
 
- }else {
+    } else {
 
- str +=oldstr;
+      str += oldstr;
 
- return rep(oldstr,str,count-1)
+      return rep(oldstr, str, count - 1)
 
- }
+    }
 
- }
+  }
 
 }
 ```
@@ -1317,34 +1322,33 @@ function repeat (str, count) {
  remove-item 在click事件出现时都会触发 onClick 这个回调
 
 ```
-
 function delegate(parentElem, eventType, className, callback) {
 
- if(parentElem.addEventListener){
+  if (parentElem.addEventListener) {
 
- parentElem.addEventListener(eventType,function(event){
+    parentElem.addEventListener(eventType, function(event) {
 
- if(event.target.classList.contains(className)){
+      if (event.target.classList.contains(className)) {
 
- callback(event);
+        callback(event);
 
- }
+      }
 
- })
+    })
 
- }else if(parentElem.attachEvent){
+  } else if (parentElem.attachEvent) {
 
- parentElem.attachEvent('on'+eventType,function(event){
+    parentElem.attachEvent('on' + eventType, function(event) {
 
- if(event.srcElement.classList.contains(className)){
+      if (event.srcElement.classList.contains(className)) {
 
- callback(event)
+        callback(event)
 
- }
+      }
 
- })
+    })
 
- }
+  }
 
 }
 
@@ -1362,41 +1366,42 @@ function delegate(parentElem, eventType, className, callback) {
 ```
 quicksort([1,21,1,2,34,2,521,21,335,22,457,23])
 
-function quicksort(ary){
+function quicksort(ary) {
 
- if(ary.length <= 1){
+  if (ary.length <= 1) {
 
- return ary;
+    return ary;
 
- }
+  }
 
- var pivotIndex = Math.floor(ary.length/2);
+  var pivotIndex = Math.floor(ary.length / 2);
 
- var pivot = ary[pivotIndex];
+  var pivot = ary[pivotIndex];
 
- var greaterAry=[],lessAry = [];
+  var greaterAry = [],
+    lessAry = [];
 
- var pivotAry = [];
+  var pivotAry = [];
 
- ary.forEach( function(element, index) {
+  ary.forEach(function(element, index) {
 
- if(element > pivot){
+    if (element > pivot) {
 
- greaterAry.push(element);
+      greaterAry.push(element);
 
- }else if(element < pivot){
+    } else if (element < pivot) {
 
- lessAry.push(element);
+      lessAry.push(element);
 
- }else if(element == pivot){
+    } else if (element == pivot) {
 
- pivotAry.push(element)
+      pivotAry.push(element)
 
- }
+    }
 
- });
+  });
 
- return quicksort(lessAry).concat(pivotAry,quicksort(greaterAry));
+  return quicksort(lessAry).concat(pivotAry, quicksort(greaterAry));
 
 }
 ```
@@ -1407,31 +1412,31 @@ function quicksort(ary){
 
 unique([1,21,1,2,34,2,521,21,335,22,457,23]);
 
-function unique(ary){
+function unique(ary) {
 
- if(ary == undefined || ary.length == 0)return;
+  if (ary == undefined || ary.length == 0) return;
 
- var obj = {};
+  var obj = {};
 
- for(var i=0;i < ary.length;i++){
+  for (var i = 0; i < ary.length; i++) {
 
- var element = ary[i];
+    var element = ary[i];
 
- if(obj[element] != element) {
+    if (obj[element] != element) {
 
- obj[element] = element;
+      obj[element] = element;
 
- }else if(obj[element] == element){
+    } else if (obj[element] == element) {
 
- ary.splice(index, 1);
+      ary.splice(index, 1);
 
- i --;
+      i--;
 
- }
+    }
 
- }
+  }
 
- return ary;
+  return ary;
 
 }
 ```
@@ -1439,44 +1444,38 @@ function unique(ary){
 ### 将url的查询参数解析成字典对象
 
 ```
+function getQueryObject(url) {
+  url = url == null ? window.location.href : url;
+  var search = url.substring(url.lastIndexOf("?") + 1);
+  var obj = {};
+  var reg = /([^?&=]+)=([^?&=]\*)/g;
+  search.replace(reg, function(rs, $1, $2) {
 
-function getQueryObject(url){
+    var name = decodeURIComponent($1);
 
- url = url == null? window.location.href : url;
+    var val = decodeURIComponent($2);
 
- var search = url.substring(url.lastIndexOf("?") + 1);
+    var = String(val);
 
- var obj = {};
+    obj[name] = val;
 
- var reg = /([^?&=]+)=([^?&=]\*)/g;
+    return rs;
 
- search.replace(reg,function(rs,$1,$2){
+  });
 
- var name = decodeURIComponent($1);
-
- var val = decodeURIComponent($2);
-
- var = String(val);
-
- obj[name] = val;
-
- return rs;
-
- });
-
- return obj;
+  return obj;
 
 }
 ```
 
 
-### 使用js实现bind,trigger
+### <h3 id='code-6'>使用js实现bind,trigger</h3>
 
 ```
 
 function Emitter() {
 
- this._listener = {}; //_listener[自定义的事件名] = [所用执行的匿名函数1, 所用执行的匿名函数2]
+  this._listener = {}; //_listener[自定义的事件名] = [所用执行的匿名函数1, 所用执行的匿名函数2]
 
 }
 
@@ -1484,59 +1483,59 @@ function Emitter() {
 
 Emitter.prototype.bind = function(eventName, funCallback) {
 
- var listenersArr = this._listener[eventName] || []; ////this._listener[eventName]没有值则将listener定义为[](数组)。
+  var listenersArr = this._listener[eventName] || []; ////this._listener[eventName]没有值则将listener定义为[](数组)。
 
- listenersArr.push(funCallback);
+  listenersArr.push(funCallback);
 
- this._listener[eventName] = listenersArr;
+  this._listener[eventName] = listenersArr;
 
- }
+}
 
- //触发事件
+//触发事件
 
 Emitter.prototype.trigger = function(eventName) {
 
- //未绑定事件
+  //未绑定事件
 
- if (!this._listener.hasOwnProperty(eventName)) {
+  if (!this._listener.hasOwnProperty(eventName)) {
 
- console.log('you do not bind this event');
+    console.log('you do not bind this event');
 
- return;
+    return;
 
- }
+  }
 
- var args = Array.prototype.slice.call(arguments, 1); ////args为获得除了eventName后面的参数(最后被用作注册事件的参数)
+  var args = Array.prototype.slice.call(arguments, 1); ////args为获得除了eventName后面的参数(最后被用作注册事件的参数)
 
- var listenersArr = this._listener[eventName];
+  var listenersArr = this._listener[eventName];
 
- var _this = this;
+  var _this = this;
 
- if (!Array.isArray(listenersArr)) return; ////自定义事件名不存在
+  if (!Array.isArray(listenersArr)) return; ////自定义事件名不存在
 
- listenersArr.forEach(function(callback) {
+  listenersArr.forEach(function(callback) {
 
- try {
+    try {
 
- callback.call(_this, args);
+      callback.call(_this, args);
 
- } catch (e) {
+    } catch (e) {
 
- console.log(e);
+      console.log(e);
 
- }
+    }
 
- });
+  });
 
- }
+}
 
- //解绑
+//解绑
 
 Emitter.prototype.unbind = function(eventName, callback) {
 
- this._listener.hasOwnProperty(eventName) && delete this._listener[eventName];
+  this._listener.hasOwnProperty(eventName) && delete this._listener[eventName];
 
- callback && callback();
+  callback && callback();
 
 }
 ```
@@ -1546,104 +1545,103 @@ Emitter.prototype.unbind = function(eventName, callback) {
 
 numberString('32324');
 
-function numberString(num){
+function numberString(num) {
 
- if(num == undefined || typeof(num) != 'string') return;
+  if (num == undefined || typeof(num) != 'string') return;
 
- return !isNaN(num);
+  return !isNaN(num);
 
 }
 
 ```
 
-### 一个有序数组，输出指定值（可能重复）的下标
+### <h3 id='code-8'>一个有序数组，输出指定值（可能重复）的下标</h3>
 
 ```
 
 indexAry(3,[1,2,3,4,5,6,7,8]);
 
-function indexAry(ele,ary){
+function indexAry(ele, ary) {
 
- if(ary == undefined || ary.length == 0||ele == undefined || isNaN(ele)) return -1;
+  if (ary == undefined || ary.length == 0 || ele == undefined || isNaN(ele)) return -1;
 
- let indexAry = [];
+  let indexAry = [];
 
- ary.forEach( function(element, index) {
+  ary.forEach(function(element, index) {
 
- if(element == ele){
+    if (element == ele) {
 
- indexAry.push(index);
+      indexAry.push(index);
 
- }else if(element > ele){
+    } else if (element > ele) {
 
- return;
+      return;
 
- };
+    };
 
- });
+  });
 
- return indexAry.length?indexAry.toString():-1;
-
+  return indexAry.length ? indexAry.toString() : -1;
 }
 ```
 
 ### 冒泡排序
 ```
     function bubbleSort(numSeries) {
-        if (numSeries.length \< 2) {
-            return numSeries;
-        }
-        let len = numSeries.length;
-
-        for (let i = 0; i \< len - 1; i++) {
-            for (let j = i; j \< len - i - 1; j++) {
-                if (numSeries[j] \> numSeries[j + 1]) {
-                    [
-                        numSeries[j],
-                        numSeries[j + 1]
-                    ] = [
-                        numSeries[j + 1],
-                        numSeries[j]
-                    ];
-                }
-            }
-        }
-
+      if (numSeries.length < 2) {
         return numSeries;
+      }
+      let len = numSeries.length;
+
+      for (let i = 0; i < len - 1; i++) {
+        for (let j = i; j < len - i - 1; j++) {
+          if (numSeries[j] > numSeries[j + 1]) {
+            [
+              numSeries[j],
+              numSeries[j + 1]
+            ] = [
+              numSeries[j + 1],
+              numSeries[j]
+            ];
+          }
+        }
+      }
+
+      return numSeries;
     }
 ```
 
 ### 插入排序
 
 ```
-    function insertSort( arr ) {
-        var len = arr.length,
-            temp;
+    function insertSort(arr) {
+      var len = arr.length,
+        temp;
 
-        for ( var i = 1; i < len; i++ ) {
-            var j;
-            temp = arr[i];
-            j = i;
+      for (var i = 1; i < len; i++) {
+        var j;
+        temp = arr[i];
+        j = i;
 
-            while ( j > 0 && arr[j-1] > temp ) {
-                arr[j] = arr[j-1];
-                j--;
-            }
-            arr[j] = temp;
+        while (j > 0 && arr[j - 1] > temp) {
+          arr[j] = arr[j - 1];
+          j--;
         }
-        return arr;
+        arr[j] = temp;
+      }
+      return arr;
     }
 
 ```
 
 ### 去除首尾空格
 ```
-    function removePlace( str ) {
-        var reg = /(^s\*)|(s\*)$/;
+    function removePlace(str) {
+      var reg = /(^s\*)|(s\*)$/;
 
-        if ( str && typeof str === 'string' ) {
-            return str.replace(reg, '');
-        }
+      if (str && typeof str === 'string') {
+        return str.replace(reg, '');
+      }
     }
 
 ```
@@ -1652,9 +1650,9 @@ function indexAry(ele,ary){
    sum(2,3)(5),正确返回true，错误返回false
 
 ```
-  function sum(a,b){
-    return function(total){
-      return a+b == total;
+  function sum(a, b) {
+    return function(total) {
+      return a + b == total;
     }
   }
 ```
@@ -1667,21 +1665,22 @@ function indexAry(ele,ary){
 4. 直接进行数组拼接
 
 ```
-function mergeSort(left,right){
-    var lh = left.length,rh = right.length;
-    var soryAry = [];
-    if(lh == 0 || rh == 0)return left.concat(right);
-    while (left.length !=0 && right.length !=0) {
-         if(left[0]>right[0]){
-                soryAry.push(right.shift(0));
-            }else if(left[0]< right[0]){
-                 soryAry.push(left.shift(0));
-            }else if(left[0]== right[0]){
-                soryAry.push(left.shift(0));
-                soryAry.push(right.shift(0));
-            }
+function mergeSort(left, right) {
+  var lh = left.length,
+    rh = right.length;
+  var soryAry = [];
+  if (lh == 0 || rh == 0) return left.concat(right);
+  while (left.length != 0 && right.length != 0) {
+    if (left[0] > right[0]) {
+      soryAry.push(right.shift(0));
+    } else if (left[0] < right[0]) {
+      soryAry.push(left.shift(0));
+    } else if (left[0] == right[0]) {
+      soryAry.push(left.shift(0));
+      soryAry.push(right.shift(0));
     }
-    return soryAry.concat(left.concat(right));;
+  }
+  return soryAry.concat(left.concat(right));;
 }
 
 ```
