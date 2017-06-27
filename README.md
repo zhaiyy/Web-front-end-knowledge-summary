@@ -380,7 +380,7 @@ Flex 是 Flexible Box 的缩写，意为"弹性布局"，用来为盒状模型�
 * css 动画 transform
 * animation
 
-### css3 Animate/transition/translate 区别? {#Animate}
+### <h3 id="Animate">css3 Animate/transition/translate 区别?</h3>
 
 1. css3中没有animate，只有animation（动画属性）。使用方法：用@keyframes定义自定义动画，用animation引用该动画。最简单的写法：
 `animation：name（自定义动画名称） duration（持续时间）;`
