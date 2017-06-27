@@ -1253,7 +1253,7 @@ UDP和TCP协议的主要区别是两者在如何实现信息的可靠传递方�
 ## 算法程序
 
 **索引**
-用javas
+
 1. [用javascript 语言,手工实现 repeat 函数](#code-1)
 2. [使用原生javacript实现事件代理](#使用原生javacript实现事件代理)
 3. [快速排序](#快速排序)
@@ -1267,12 +1267,13 @@ UDP和TCP协议的主要区别是两者在如何实现信息的可靠传递方�
 11. [去首位空格](#去首位空格)
 12. [求和函数](#求和函数)
 13. [两个有序数组合成一个有序数组](#两个有序数组合成一个有序数组)
+14. [实现 DOM 操作 insertAfter](#code-14)
 ----------------------------------
 
 ### <h3 id='code-1'>用javascript 语言,手工实现 repeat 函数</h3>
  两个参数:
-   1.要重复的原始字符串
-   2.需要重复的次数
+   1. 要重复的原始字符串
+   2. 需要重复的次数
    例如:
    repeat ('a', 3) => 'aaa'
 
@@ -1683,7 +1684,24 @@ function mergeSort(left, right) {
 }
 
 ```
+### <h3 id='code-14'>实现 DOM 操作 insertAfter </h3>
+首先了解一下 insertBefore
+`node.insertBefore(newnode,existingnode)`
+* Node 对象。  您插入的节点。
+* newnode Node 对象 必需。需要插入的节点对象。
+* existingnode  Node object 可选。在其之前插入新节点的子节点。如果未规定，则 insertBefore 方法会在结尾插入 newnode。
 
+所以我们要实现
+`insertAfter(newnode,existingnode)`
+```
+function insertAfter (newnode,existingnode) {
+  var parentNode = existingnode.parentNode;
+  if(existingnode == parentNode.lastChild){
+    return parentNode.insertBefore(newnode,null)
+  }
+  return parentNode.insertBefore(newnode,existingnode.nextSibling)
+};
+```
 
 ## 前端性能优化
 
