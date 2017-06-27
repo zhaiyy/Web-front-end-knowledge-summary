@@ -1694,12 +1694,12 @@ function mergeSort(left, right) {
 所以我们要实现
 `insertAfter(newnode,existingnode)`
 ```
-function insertAfter (newnode,existingnode) {
+function insertAfter(newnode, existingnode) {
   var parentNode = existingnode.parentNode;
-  if(existingnode == parentNode.lastChild){
-    return parentNode.insertBefore(newnode,null)
+  if (existingnode == parentNode.lastChild) {
+    return parentNode.insertBefore(newnode, null)
   }
-  return parentNode.insertBefore(newnode,existingnode.nextSibling)
+  return parentNode.insertBefore(newnode, existingnode.nextSibling)
 };
 ```
 
