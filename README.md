@@ -367,10 +367,10 @@ Flex 是 Flexible Box 的缩写，意为"弹性布局"，用来为盒状模型�
 **索引**
 
 1. [css3新增的属性](#css3新增的属性)
-2. [css3 Animate/transition/translate 区别？](#css3 Animate/transition/translate 区别？)
+2. [css3 Animate/transition/translate 区别？](#Animate)
 3. [对CSS3中bfc的理解和应用](#对CSS3中bfc的理解和应用)
 4. [BFC在布局中的应用](#BFC在布局中的应用)
-5. [Canvas SVG 区别](#Canvas SVG 区别)
+5. [Canvas SVG 区别](#Canvas)
 ----------------------------------
 
 ### css3新增的属性
@@ -380,7 +380,7 @@ Flex 是 Flexible Box 的缩写，意为"弹性布局"，用来为盒状模型�
 * css 动画 transform
 * animation
 
-### css3 Animate/transition/translate 区别？
+### css3 Animate/transition/translate 区别？{#Animate}
 
 1. css3中没有animate，只有animation（动画属性）。使用方法：用@keyframes定义自定义动画，用animation引用该动画。最简单的写法：
 `animation：name（自定义动画名称） duration（持续时间）;`
@@ -415,7 +415,7 @@ BFC是一块渲染区域，那这块渲染区域到底在哪，它又是有多�
 * 浮动相关问题；
 * 多栏布局的一种方式!
 
-### Canvas SVG 区别
+### Canvas SVG 区别{#Canvas}
 
 * Canvas 适用场景：
 
