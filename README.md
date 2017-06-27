@@ -877,8 +877,8 @@ Json是一种轻量级的数据交换格式
 `try{}catch(e){}finally{}`
 
 ### 实现对函数内置的arguments对象进行排序
-``
-`
+
+```
 [].sort.call(arguments,function(a,b){
 
 return a-b;
@@ -1638,7 +1638,6 @@ function indexAry(ele, ary) {
 ```
     function removePlace(str) {
       var reg = /(^s\*)|(s\*)$/;
-
       if (str && typeof str === 'string') {
         return str.replace(reg, '');
       }
