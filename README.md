@@ -1082,6 +1082,99 @@ D.1,4,2,3
     c();
 ```
 答案：20
+**7.
+```
+ var scope = 'global scope';
+	function checkScope(){
+		var scope = 'local scope';
+		function f(){
+			return scope;
+		}
+		return f;
+	}
+	checkScope()();
+```
+答案："local scope"
+**8.
+```
+var scope = 'global scope';
+function checkScope(){
+	var scope = 'local scope';
+	function f(){
+		return scope;
+	}
+	return f();
+}
+checkScope();
+```
+答案："local scope"
+**9.
+```
+var scope = 'global scope';
+function checkScope(){
+	var scope = 'local scope';
+	return new Function('return scope');
+}
+checkScope();
+```
+答案：
+function anonymous() {
+return scope
+}
+**10.
+```
+var m = 2,a=b=0;
+function add(n){
+	return n = n+1;
+}
+x = add(m);
+function add(n){
+	return n = n+3;
+}
+y = add(m);
+console.log(x)
+console.log(y)
+```
+答案：x=5;y=5
+**11.
+```
+var length = 20;
+function fn(){
+	alert(this.length)
+}
+var obj = {
+	length:5,
+	method:function(fn){
+		fn();
+		arguments[0]()
+	}
+}
+obj.method(fn)
+```
+答案：20；1
+**12.
+```
+var name = 'apple';
+var person = {
+	name: 'orange',
+	pro:{
+		name:'banana',
+		getName:function(){
+			console.log(this)
+			return this.name
+		}
+	}
+}
+console.log(person.pro.getName());
+var pepole = person.pro.getName;
+console.log(pepole());
+```
+答案：
+Object {name: "banana", getName: function}
+banana
+Window {stop: function, open: function, alert: function, confirm: function, prompt: function…}
+apple
+
 ## vue
 
 **索引**
