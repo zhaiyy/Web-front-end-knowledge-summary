@@ -1082,7 +1082,8 @@ D.1,4,2,3
     c();
 ```
 答案：20
-**7.
+
+**7.**
 ```
  var scope = 'global scope';
 	function checkScope(){
@@ -1095,7 +1096,8 @@ D.1,4,2,3
 	checkScope()();
 ```
 答案："local scope"
-**8.
+
+**8.**
 ```
 var scope = 'global scope';
 function checkScope(){
@@ -1108,7 +1110,8 @@ function checkScope(){
 checkScope();
 ```
 答案："local scope"
-**9.
+
+**9.**
 ```
 var scope = 'global scope';
 function checkScope(){
@@ -1118,10 +1121,13 @@ function checkScope(){
 checkScope();
 ```
 答案：
+```
 function anonymous() {
 return scope
 }
-**10.
+```
+
+**10.**
 ```
 var m = 2,a=b=0;
 function add(n){
@@ -1136,7 +1142,8 @@ console.log(x)
 console.log(y)
 ```
 答案：x=5;y=5
-**11.
+
+**11.**
 ```
 var length = 20;
 function fn(){
@@ -1152,7 +1159,8 @@ var obj = {
 obj.method(fn)
 ```
 答案：20；1
-**12.
+
+**12.**
 ```
 var name = 'apple';
 var person = {
@@ -1170,10 +1178,11 @@ var pepole = person.pro.getName;
 console.log(pepole());
 ```
 答案：
-Object {name: "banana", getName: function}
-banana
-Window {stop: function, open: function, alert: function, confirm: function, prompt: function…}
-apple
+
+this: Object {name: "banana", getName: function}
+name: banana
+this: Window {stop: function, open: function, alert: function, confirm: function, prompt: function…}
+name: apple
 
 ## vue
 
