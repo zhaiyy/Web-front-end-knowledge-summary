@@ -963,6 +963,62 @@ promise.then(function(value) {
 
 ```
 
+简易原理
+
+```
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23
+24
+25
+26
+function Promise(fn) {
+    var state = 'pending',
+        value = null,
+        callbacks = [];
+
+    this.then = function (onFulfilled) {
+        if (state === 'pending') {
+            callbacks.push(onFulfilled);
+            return this;
+        }
+        onFulfilled(value);
+        return this;
+    };
+
+    function resolve(newValue) {
+        value = newValue;
+        state = 'fulfilled';
+        setTimeout(function () {
+            callbacks.forEach(function (callback) {
+                callback(value);
+            });
+        }, 0);
+    }
+
+    fn(resolve);
+}
+```
+
 有三个状态 ，成功（resolved） ，加载（pending） ，失败（rejected）
 
 ## js深入理解题
