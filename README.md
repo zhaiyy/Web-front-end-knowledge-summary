@@ -1070,17 +1070,18 @@ function Promise(fn) {
     * document.getElementsByTagName("元素标签名") 在整个文档中通过元素的标签名称（li div）获得一组元素（类数组）
     * document.getElementsByName("元素标签的name属性值") 通过元素标签的name属性值获取一组元素（类数组）
     * document.getElementByClassName("元素标签的样式class的属性值") 通过元素标签样式的属性值获取一组类数组
-    8 document.documentElement获取整个html对象
+    * document.documentElement获取整个html对象
     * document.body获取整个body对象
 
 2、DOM常用的属性attribute：
-    * childNodes获取所有的子节点
-    * children获取所有的元素子节点
-    * parentNode获取唯一的父亲
-    * previousSibling获取上一个哥哥节点
-    * nextSibling获取下一个弟弟节点
-    * firstChild获取第一个子节点
-    * lastChild获取最后一个子节点
+
+    *  childNodes获取所有的子节点
+    *  children获取所有的元素子节点
+    *  parentNode获取唯一的父亲
+    *  previousSibling获取上一个哥哥节点
+    *  nextSibling获取下一个弟弟节点
+    *  firstChild获取第一个子节点
+    *  lastChild获取最后一个子节点
 
 3、节点node:
 
