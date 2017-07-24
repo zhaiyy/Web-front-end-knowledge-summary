@@ -1074,13 +1074,13 @@ function Promise(fn) {
     * document.body获取整个body对象
 
 2、DOM常用的属性attribute：
-    *  childNodes获取所有的子节点
-    *  children获取所有的元素子节点
-    *  parentNode获取唯一的父亲
-    *  previousSibling获取上一个哥哥节点
-    *  nextSibling获取下一个弟弟节点
-    *  firstChild获取第一个子节点
-    *  lastChild获取最后一个子节点
+  * childNodes获取所有的子节点
+  * children获取所有的元素子节点
+  * parentNode获取唯一的父亲
+  * previousSibling获取上一个哥哥节点
+  * nextSibling获取下一个弟弟节点
+  * firstChild获取第一个子节点
+  * lastChild获取最后一个子节点
 
 3、节点node:
 
