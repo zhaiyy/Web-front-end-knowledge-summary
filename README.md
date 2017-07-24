@@ -1074,7 +1074,6 @@ function Promise(fn) {
     * document.body获取整个body对象
 
 2、DOM常用的属性attribute：
-
     *  childNodes获取所有的子节点
     *  children获取所有的元素子节点
     *  parentNode获取唯一的父亲
