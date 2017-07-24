@@ -324,6 +324,9 @@ Flex 是 Flexible Box 的缩写，意为"弹性布局"，用来为盒状模型�
 2. [app与html5的优缺点](#app与html5的优缺点)
 3. [hyBird模式](#hyBird模式)
 4. [移动端自适应](#移动端自适应)
+5. [Viewport](#Viewport)
+6. [rem](#rem)
+7. [em](#em)
 ----------------------------------
 
 ### html5新增的属性
@@ -360,6 +363,46 @@ Flex 是 Flexible Box 的缩写，意为"弹性布局"，用来为盒状模型�
   * css属性用于声明如何表现页页的信息；而Media Query是一个用于判断输出设备是否满足某种条件的表达式；
   * Media Query其中的大部分接受min/max前缀，用来表示其逻辑关系，表示应用于大于等于或者小于等于某个值的情况
   * CSS属性要求必须有属性值，Media Query可以没有值，因为其表达式返回的只有真或假两种
+
+### Viewport
+viewport 是用户网页的可视区域,翻译为中文可以叫做"视区"。
+在具体一点，就是浏览器上(也可能是一个app中的webview)用来显示网页的那部分区域，但viewport又不局限于浏览器可视区域的大小，它可能比浏览器的可视区域要大，也可能比浏览器的可视区域要小。在默认情况下，一般来讲，移动设备上的viewport都是要大于浏览器可视区域的，这是因为考虑到移动设备的分辨率相对于桌面电脑来说都比较小，所以为了能在移动设备上正常显示那些传统的为桌面浏览器设计的网站，移动设备上的浏览器都会把自己默认的viewport设为980px或1024px（也可能是其它值，这个是由设备自己决定的），但带来的后果就是浏览器会出现横向滚动条，因为浏览器可视区域的宽度是比这个默认的viewport的宽度要小的。
+
+利用meta标签对viewport进行控制
+
+我们在开发移动设备的网站时，最常见的的一个动作就是把下面这个东西复制到我们的head标签中：
+`<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">`
+
+在苹果的规范中，meta viewport 有6个属性(暂且把content中的那些东西称为一个个属性和值)，如下：
+
+|mame | value |
+| ------------- |:-----------------------------:|
+| width | 设置layout viewport 的宽度，为一个正整数，或字符串"width-device" |
+| initial-scale | 设置页面的初始缩放值，为一个数字，可以带小数 |
+| minimum-scale | 允许用户的最小缩放值，为一个数字，可以带小数 |
+| maximum-scale | 允许用户的最大缩放值，为一个数字，可以带小数 |
+| height  | 设置layout viewport 的高度，这个属性对我们并不重要，很少使用 |
+| user-scalable | 是否允许用户进行缩放，值为"no"或"yes", no 代表不允许，yes代表允许 |
+
+
+### rem
+rem 单位如何转换为像素值
+
+当使用 rem 单位，他们转化为像素大小取决于页根元素的字体大小，即 html 元素的字体大小。 根元素字体大小乘以你 rem 值。
+
+例如，根元素的字体大小 16px，10rem 将等同于 160px，即 10 x 16 = 160。
+
+ rem 单位翻译为像素值是由 html 元素的字体大小决定的。 此字体大小会被浏览器中字体大小的设置影响，除非显式重写一个具体单位
+
+### em
+em 单位如何转换为像素值
+
+当使用em单位时，像素值将是em值乘以使用em单位的元素的字体大小。
+
+例如，如果一个 div 有 18px 字体大小，10em 将等同于 180px，即 10 × 18 = 180。
+
+ em 单位转为像素值，取决于他们使用的字体大小。 此字体大小受从父元素继承过来的字体大小，除非显式重写与一个具体单位。
+
 
 
 ## css3
@@ -456,6 +499,8 @@ Canvas 提供的功能更原始，适合像素处理，动态渲染和大数据�
 22. [实现对函数内置的arguments对象进行排序](#实现对函数内置的arguments对象进行排序)
 23. [为什么文档集合不能直接借用数组类的sort方法进行排序呢？](#js-23)
 24. [sessionStorage，cookie，localStorage](#js-24)
+25. [javascript 的数据类型](#js-25)
+26. [DOM](#js-26)
 ----------------------------------
 ### 什么是事件冒泡
 
@@ -995,6 +1040,58 @@ function Promise(fn) {
 ```
 
 有三个状态 ，成功（resolved） ，加载（pending） ，失败（rejected）
+
+### <h3 id='js-25'>javascirpt 的数据类型</h3>
+
+* 1、基本数据类型（数据结构简单）：
+
+ number数字、string字符串、boolean布尔（true、false）  null     undefined
+
+* 2、引用数据类型:
+  * a)object对象数字类型：Object对象、Array数组，RegExp正则，Date时间，Math数学,String字符串对象、Boolean布尔对象
+  * b)function：数据结构复杂
+
+* 3.基本数据类型与引用数据类型的区别：
+
+  基本数据类型的变量存放的是基本类型数据的实际值；而引用数据类型的变量保存对它的引用，即指针。
+
+  引用数据类型：
+    * 首先开辟一个新的空间，将属性名和属性值保存进去
+    * 定义一个变量
+    * 把新开空间的地址当做值给这个变量
+
+### <h3 id='js-26'>DOM</h3>
+
+1、DOM:文档对象模型
+  • 用来描述家庭关系的族谱图
+  • 只要我们获得了一个元素就可以通过属性或方法获得页面中的任何一个元素
+  • 获取元素的方法：
+    a. document.getElementById("元素标签的id"); 在整个文档中通过元素标签的id值获取一个元素对象
+    b. document.getElementsByTagName("元素标签名") 在整个文档中通过元素的标签名称（li div）获得一组元素（类数组）
+    c. document.getElementsByName("元素标签的name属性值") 通过元素标签的name属性值获取一组元素（类数组）
+    d. document.getElementByClassName("元素标签的样式class的属性值") 通过元素标签样式的属性值获取一组类数组
+    e. document.documentElement获取整个html对象
+    f. document.body获取整个body对象
+
+2、DOM常用的属性attribute：
+    a. childNodes获取所有的子节点
+    b. children获取所有的元素子节点
+    c. parentNode获取唯一的父亲
+    d. previousSibling获取上一个哥哥节点
+    e. nextSibling获取下一个弟弟节点
+    f. firstChild获取第一个子节点
+    g. lastChild获取最后一个子节点
+
+3、节点node:
+
+  | nodeType:节点类型 | nodeName    | 节点名称node  | Value节点值 |
+  | ---------------  |:--------- -:| -----------:|-----------:|
+  | 元素节点 | 1 | 大写的标签名 |  （ LIDIV） |
+  | 文本节点 | 3 |  #text     |  文本内容   |
+  | 注释节点 | 8 |  #comment  |  注释内容   |
+  | document | 9 | #document |  null     |
+
+
 
 ## js深入理解题
 
@@ -1597,6 +1694,8 @@ function quicksort(ary) {
 
 ### 数组去重
 
+#### 纯数字数组去重（方法一）
+
 ```
 
 unique([1,21,1,2,34,2,521,21,335,22,457,23]);
@@ -1629,6 +1728,41 @@ function unique(ary) {
 
 }
 ```
+
+#### 纯数字数组去重（方法二 ES6）
+
+```
+unique([1, 21, 1, 2, 34, 2, 521, 21, 335, 22, 457, 23]);
+
+function unique(ary) {
+  if (ary.length == 0 || ary.length == 1) return ary;
+  return Array.from(new Set(ary));
+}
+
+```
+#### 对象数组去重（方法一）
+
+```
+uniqueAry([1, 4, 2, 3, {a: 1}, 63, 5, 6, {a: 1}]);
+
+function uniqueAry(ary) {
+  if (ary.length == 0 || ary.length == 1) return ary;
+  var obj = {};
+  for (var i = 0; i < ary.length; i++) {
+    var ele = ary[i];
+    //如果当前元素类型为引用数据类型，转换成json字符串
+    if (typeof(ele) == 'object') ele = JSON.stringify(ele);
+    if (obj[ele] == ele) {
+      ary.splice(i, 1);
+      i--;
+    } else if (obj[ele] != ele) {
+      obj[ele] = ele;
+    }
+  }
+  return ary;
+};
+```
+
 
 ### 将url的查询参数解析成字典对象
 
