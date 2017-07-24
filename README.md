@@ -1063,29 +1063,29 @@ function Promise(fn) {
 ### <h3 id='js-26'>DOM</h3>
 
 1、DOM:文档对象模型
-  • 用来描述家庭关系的族谱图
-  • 只要我们获得了一个元素就可以通过属性或方法获得页面中的任何一个元素
-  • 获取元素的方法：
-    a. document.getElementById("元素标签的id"); 在整个文档中通过元素标签的id值获取一个元素对象
-    b. document.getElementsByTagName("元素标签名") 在整个文档中通过元素的标签名称（li div）获得一组元素（类数组）
-    c. document.getElementsByName("元素标签的name属性值") 通过元素标签的name属性值获取一组元素（类数组）
-    d. document.getElementByClassName("元素标签的样式class的属性值") 通过元素标签样式的属性值获取一组类数组
-    e. document.documentElement获取整个html对象
-    f. document.body获取整个body对象
+  * 用来描述家庭关系的族谱图
+  * 只要我们获得了一个元素就可以通过属性或方法获得页面中的任何一个元素
+  * 获取元素的方法：
+    * document.getElementById("元素标签的id"); 在整个文档中通过元素标签的id值获取一个元素对象
+    * document.getElementsByTagName("元素标签名") 在整个文档中通过元素的标签名称（li div）获得一组元素（类数组）
+    * document.getElementsByName("元素标签的name属性值") 通过元素标签的name属性值获取一组元素（类数组）
+    * document.getElementByClassName("元素标签的样式class的属性值") 通过元素标签样式的属性值获取一组类数组
+    8 document.documentElement获取整个html对象
+    * document.body获取整个body对象
 
 2、DOM常用的属性attribute：
-    a. childNodes获取所有的子节点
-    b. children获取所有的元素子节点
-    c. parentNode获取唯一的父亲
-    d. previousSibling获取上一个哥哥节点
-    e. nextSibling获取下一个弟弟节点
-    f. firstChild获取第一个子节点
-    g. lastChild获取最后一个子节点
+    * childNodes获取所有的子节点
+    * children获取所有的元素子节点
+    * parentNode获取唯一的父亲
+    * previousSibling获取上一个哥哥节点
+    * nextSibling获取下一个弟弟节点
+    * firstChild获取第一个子节点
+    * lastChild获取最后一个子节点
 
 3、节点node:
 
   | nodeType:节点类型 | nodeName    | 节点名称node  | Value节点值 |
-  | ---------------  |:--------- -:| -----------:|-----------:|
+  | ---------------  |:----------:| -----------:|-----------:|
   | 元素节点 | 1 | 大写的标签名 |  （ LIDIV） |
   | 文本节点 | 3 |  #text     |  文本内容   |
   | 注释节点 | 8 |  #comment  |  注释内容   |
