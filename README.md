@@ -54,6 +54,8 @@
 5. [css垂直居中方法](#css垂直居中方法)
 6. [实现布局左侧固定尺寸,右侧自适应](#css-6)
 7. [css flex 使用](#css-7)
+8. [css 实现左右两列等高容器布局](#css-8)
+9. [css 实现三角形](#css-9)
 ----------------------------------
 
 ### css选择器
@@ -314,7 +316,67 @@ Flex 是 Flexible Box 的缩写，意为"弹性布局"，用来为盒状模型�
 ```
 ![](./img/4.png)
 
+### <h3 id='css-8'>css 实现左右两列等高容器布局，要求元素实际占用的高度以两列中较高的为准</h3>
 
+```
+// html
+
+<div class="container">
+    <div class="left"></div>
+    <div class="right"></div>
+</div>
+
+```
+* flex 布局方式
+
+```
+.container{
+       display: flex;
+        width: 100px;
+    }
+    .left,.right{
+       flex: 1;
+    }
+```
+
+* table 布局
+
+```
+ .container{
+        display: table;
+        width: 100px;
+        table-layout: fixed;
+    }
+    .left,.right{
+        display: table-cell;
+    }
+```
+
+* grid 布局
+
+```
+.container{
+        display: grid;
+        grid-auto-flow: column;
+        grid-gap:20px;
+        width: 100px;
+    }
+```
+
+### <h3 id='css-9'>css 实现三角形</h3>
+
+// 下三角
+```
+<div class="container"></div>
+.container{
+        width: 0;
+        height: 0;
+        border: 50px solid transparent;
+        border-bottom: 50px solid red;
+}
+
+```
+transparent: 不过如果您不希望某元素拥有背景色，同时又不希望用户对浏览器的颜色设置影响到您的设计，那么设置transparent
 
 ## html5
 
@@ -334,7 +396,7 @@ Flex 是 Flexible Box 的缩写，意为"弹性布局"，用来为盒状模型�
 * 新增了一些标签 header footer nav section aside 可以更好的描述文本结构
 * 新增了音视频标签 video audio
 * canvas
-* 新增了一些标签属性 input type = number, email
+* 新增了一些标签属性 input type = number, email,color,date,datetime,month,range,tel,url
 
 
 ### app与html5的优缺点
@@ -454,8 +516,56 @@ BFC是一块渲染区域，那这块渲染区域到底在哪，它又是有多�
 看到有人把display：table也认为可以生成BFC，其实这里的主要原因在于Table会默认生成一个匿名的table-cell，正是这个匿名的table-cell生成了BFC。
 
 ### <h3 id='css3-4'>BFC 在布局中的应用</h3>
-* 防止margin重叠
+* 防止margin重叠,可以消除Margin Collapse
+在正常情况下，在一个容器内的所有box将会由上至下依次垂直排列，即我们所说的一个元素占一行，并切垂直相邻的距离(即margin)是由各自的margin决定的，而不是两个margin的叠加。
+让我们看一个例子：红色的div包含三个绿色的p元素。
+html代码
+```
+<div class="container">
+  <p>Sibling 1</p>
+  <p>Sibling 2</p>
+  <p>Sibling 3</p>
+</div>
+```
+css代码
+```
+.container { background-color: red; overflow: hidden;}
+p { background-color: lightgreen; margin: 10px 0;}
+```
+理想情况下，我们会认为p标签之间的margin应该是它们的和(20px),但实际上却是10px.这其实是collapsing margins
+![](./img/5.png)
+这似乎让人有点困惑，BFC导致了margin collapse，而现在又要用它来解决margin cllapse.但是始终要记住一点：只有当元素在同一个BFC中时，垂直方向上的margin 才会clollpase.如果它们属于不同的BFC，则不会有margin collapse.因此我们可以再建立一个BFC去阻止margin collpase的发生。
+现在HTML变成：
+```
+<div class="container">
+    <p>Sibling 1</p>
+    <p>Sibling 2</p>
+    <div class="newBFC">
+      <p>Sibling 3</p>
+    </div>
+</div>
+```
+CSS也有改变：
+```
+.container { background-color: red; overflow: hidden;}
+p { margin: 10px 0; background-color: lightgreen;}
+.newBFC { overflow: hidden; }
+```
+现在的结果为：
+![](./img/6.png)
+由于第二个p元素和第三个p元素属于不同的BFC，因此避免了margin collapse.
+
 * 浮动相关问题；
+```
+<div class="container">
+    <div>Sibling</div>
+    <div>Sibling</div>
+</div>
+
+
+.container { overflow: hidden; background-color: green;}
+.container div { float: left; background-color: lightgreen; margin: 10px;}
+```
 * 多栏布局的一种方式!
 
 ### <h3 id='css3-5'>Canvas SVG 区别 </h3>
@@ -501,6 +611,7 @@ Canvas 提供的功能更原始，适合像素处理，动态渲染和大数据�
 24. [sessionStorage，cookie，localStorage](#js-24)
 25. [javascript 的数据类型](#js-25)
 26. [DOM](#js-26)
+27. [js中使用new操作符做了什么事情](#js-27)
 ----------------------------------
 ### 什么是事件冒泡
 
@@ -1091,7 +1202,18 @@ function Promise(fn) {
   | 注释节点 | 8 |  #comment  |  注释内容   |
   | document | 9 | #document |  null     |
 
+### <h3 id='js-27'>js中使用new操作符做了什么事情]</h3>
+例：`var obj = new Base(); `
 
+该步一共做了三件事：即
+  ```
+   var obj  = {};
+   obj.__proto__ = Base.prototype;
+    Base.call(obj);
+```
+第一行，我们创建了一个空对象obj
+第二行，我们将这个空对象的__proto__成员指向了Base函数对象prototype成员对象
+第三行，我们将Base函数对象的this指针替换成obj。
 
 ## js深入理解题
 
@@ -1553,6 +1675,8 @@ UDP和TCP协议的主要区别是两者在如何实现信息的可靠传递方�
 12. [求和函数](#求和函数)
 13. [两个有序数组合成一个有序数组](#两个有序数组合成一个有序数组)
 14. [实现 DOM 操作 insertAfter](#code-14)
+15. [写出一个数组展开函数](#code-15)
+16. [实现jsonp封装函数](#code-16)
 ----------------------------------
 
 ### <h3 id='code-1'>用javascript 语言,手工实现 repeat 函数</h3>
@@ -2025,6 +2149,51 @@ function insertAfter(newnode, existingnode) {
 };
 ```
 
+### <h3 id='code-15'>写出一个数组展开函数，如输入[1,[2,[3,4,5],2],3]，输出[1, 2, 3, 4, 5, 2, 3] </h3>
+
+```
+ function openAry(ary) {
+        var list =[]
+        for(let i in ary){
+            if(ary[i] instanceof  Array){
+                list = list.concat(openAry(ary[i]))
+            }else{
+              list.push(ary[i])
+            }
+        }
+        return list
+    }
+```
+### <h3 id='code-16'> 实现jsonp封装函数，调用方式如下</h3>
+
+```
+jsonp('http://www.baidu.com',{
+    param1:1,
+    param2:2
+},function(data){
+    console.log(data)
+})
+
+```
+
+```
+function jsonp(url,param,callback){
+    let postUrl = url + '?' + objToString(param) +'callback = '+callback
+    let jsonp = document.createElement('script');
+    jsonp.type = 'text/javascript';
+    jsonp.src = postUrl;
+    document.getElementsByTagName('head')[0].appendChild(jsonp);
+}
+function objToString(obj) {
+    let str = ''
+    for(let key in obj) {
+        str += key + '=' + obj[key] +'&'
+    }
+    return str
+}
+
+
+```
 ## 前端性能优化
 
   1、代码优化：
