@@ -1435,6 +1435,67 @@ name: banana
 this: Window {stop: function, open: function, alert: function, confirm: function, prompt: function…}
 name: apple
 
+**13.**
+
+```
+alert(typeof(null)) // object
+alert(typeof(undefined)) // undefined
+alert(typeof(NaN)) // number
+alert(NaN === undefined) //false
+alert(1+2+'3'+4) // 334
+var str = '12345f'
+alert(typeof(str++)) // number
+alert('a' == new String('a')) // true
+```
+ ** 14. **
+ ```
+ var x = 1 , y = 0, z = 0;
+var add = function (x){
+    return x = x + 1
+}
+y = add(x)
+function add(x){
+    return x = x + 3
+}
+z = add(x)
+console.log(x, y, z) 
+ ```
+答案：1 2 2
+
+** 15. **
+```
+var myObject = {
+    num: 2,
+    add: function() {
+        this.num = 3; 
+        (function() {
+            console.log(this.num) 
+            this.num = 4
+        })()
+        console.log(this.num) 
+    },
+    sub: function(){
+        console.log(this.num)
+    }
+}
+myObject.add() 
+console.log(myObject.num) 
+console.log(num) 
+var sub = myObject.sub;
+sub() 
+```
+答案： 1 3 3 4 4 
+
+** 16. **
+```
+var i = 0;
+for(i=0;i++<3;){
+    setTimeout(function(){
+        return function (){console.log(i)}
+    }(),0)
+}
+```
+答案：4 4 4
 ## vue
 
 **索引**
