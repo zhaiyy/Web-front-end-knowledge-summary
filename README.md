@@ -1447,7 +1447,7 @@ var str = '12345f'
 alert(typeof(str++)) // number
 alert('a' == new String('a')) // true
 ```
- ** 14. **
+ **14. **
  ```
  var x = 1 , y = 0, z = 0;
 var add = function (x){
@@ -1462,7 +1462,7 @@ console.log(x, y, z)
  ```
 答案：1 2 2
 
-** 15. **
+**15. **
 ```
 var myObject = {
     num: 2,
@@ -1486,7 +1486,7 @@ sub()
 ```
 答案： 1 3 3 4 4 
 
-** 16. **
+**16. **
 ```
 var i = 0;
 for(i=0;i++<3;){
