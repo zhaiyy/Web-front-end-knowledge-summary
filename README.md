@@ -1780,6 +1780,12 @@ function repeat(str, count) {
   }
 
 }
+
+// 更新算法
+ function repeat(str,num,oldstr = ''){
+        oldstr = oldstr + str
+        return num<=1 ? oldstr : repeat(str,num-1 ,oldstr)
+    }
 ```
 
  ### 使用原生javacript实现事件代理
@@ -2091,6 +2097,36 @@ function indexAry(ele, ary) {
 
   return indexAry.length ? indexAry.toString() : -1;
 }
+//利用二分查找法查找
+function bsearch(target, ary, start = 0, end = ary.length - 1) {
+        if (target < ary[start] || target > ary[end] || start >= end) {
+            return []
+        }
+        let mid = start + Math.floor((end - start) / 2)
+        let indexList = []
+        if (ary[mid] == target) {
+            indexList.push(mid)
+            if (ary[mid + 1] == target) {
+                var i = 1
+                while (ary[mid + i] == target) {
+                    indexList.push(mid + i)
+                    i++
+                }
+            }
+            if (ary[mid - 1] == target) {
+                var i = 1
+                while (ary[mid - i] == target) {
+                    indexList.push(mid - i)
+                    i ++
+                }
+            }            return indexList
+        } else if (ary[mid] > target) {
+            return indexList.concat(bsearch(target, ary, start, mid - 1))
+        } else if (ary[mid] < target) {
+            return indexList.concat(bsearch(target, ary, mid + 1, end))
+        }
+
+    }
 ```
 
 ### 冒泡排序
