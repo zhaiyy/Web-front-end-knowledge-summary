@@ -1,0 +1,9 @@
+{
+  "name": "com.youdao.cidian.text_extractor_host",
+  "description": "Youdao Dict Text Extractor Native Messaging API Host For Chrome",
+  "path": "text_extractor_host.exe",
+  "type": "stdio",
+  "allowed_origins": [
+    "chrome-extension://aohddidmgooofkgohkbkaohadkolgejj/"
+  ]
+}
