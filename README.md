@@ -4,8 +4,8 @@
 ## 1. JavaScript基础
    1. [JavaScript深入之词法作用域和动态作用域](https://github.com/mqyqingfeng/Blog/issues/3)
    2. [JavaScript深入之执行上下文栈 ](https://github.com/mqyqingfeng/Blog/issues/4)
-   3. [JavaScript作用域链 ](../Web-front-end-knowledge-summary/JavaScript基础/JavaScript%20作用域和作用域链.md)
-   4. [闭包](../Web-front-end-knowledge-summary/JavaScript基础/闭包.md)
+   3. [JavaScript作用域链 ](./JavaScript基础/JavaScript%20作用域和作用域链.md)
+   4. [闭包](./JavaScript基础/闭包.md)
    5. [什么是事件冒泡](#什么是事件冒泡)
    6. [什么是事件捕获](#什么是事件捕获)
    7. [阻止事件冒泡](#阻止事件冒泡)

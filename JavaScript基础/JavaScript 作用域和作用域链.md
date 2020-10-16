@@ -26,3 +26,5 @@ window对象的内置属性都拥有全局作用域，例如 `window.name`、`wi
 
 ## 参考文章
 [JavaScript深入之作用域链](https://github.com/mqyqingfeng/Blog/issues/6)
+
+## [>> 查看更多](../README.md)
