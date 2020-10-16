@@ -1,36 +1,40 @@
-# web front end knoeledge summary
+# 前端知识点总结
+
+内容持续更新中...
 
 # 目录
 ## 1. JavaScript基础
    1. [JavaScript深入之词法作用域和动态作用域](https://github.com/mqyqingfeng/Blog/issues/3)
    2. [JavaScript深入之执行上下文栈 ](https://github.com/mqyqingfeng/Blog/issues/4)
    3. [JavaScript作用域链 ](./JavaScript基础/JavaScript%20作用域和作用域链.md)
-   4. [闭包](./JavaScript基础/闭包.md)
-   5. [什么是事件冒泡](#什么是事件冒泡)
-   6. [什么是事件捕获](#什么是事件捕获)
-   7. [阻止事件冒泡](#阻止事件冒泡)
-   8. [阻止事件默认行为](#阻止事件默认行为)
-   9. [什么是事件委托](#什么是事件委托)
-   10. [实现事件模型](#实现事件模型)
-   11. [事件如何派发也就是事件广播（dispatchEvent）](#js-7)
-   12. [函数节流](#函数节流)
-   13. [设计模式](#设计模式)
-   14. [get && post](#js-12)
-   15. [如何进行跨域](#如何进行跨域)
-   16. [JavaScript把一个参数从页面A传递给页面B，进行某些操作，然后由页面B回传给页面A](#js-14)
-   17. [JSON是什么?](#js-15)
-   18. [如何把JS对象与JSON对象相互转换](#如何把JS对象与JSON对象相互转换)
-   19. [数组和对象之间的关系是什么](#数组和对象之间的关系是什么)
-   20. [call和apply的作用的区别是什么](#call和apply的作用的区别是什么)
-   21. [eval的作用是什么](#eval的作用是什么)
-   22. [如何严格的判断一个数据是数组（Array）类的实例](#js-20)
-   23. [JS中异常捕获](#JS中异常捕获)
-   24. [实现对函数内置的arguments对象进行排序](#实现对函数内置的arguments对象进行排序)
-   25. [为什么文档集合不能直接借用数组类的sort方法进行排序呢？](#js-23)
-   26. [sessionStorage，cookie，localStorage](#js-24)
-   27. [javascript 的数据类型](#js-25)
-   28. [DOM](#js-26)
-   29. [js中使用new操作符做了什么事情](#js-27)
+   4. [JavaScript闭包](./JavaScript基础/闭包.md)
+   5. [JavaScript基础——this](https://github.com/axuebin/articles/issues/6)
+   6. [JavaScript基础心法——call apply bind ](https://github.com/axuebin/articles/issues/7)
+   7. [JavaScript深入之bind的模拟实现 ](https://github.com/mqyqingfeng/Blog/issues/12)
+   8. [什么是事件冒泡](#什么是事件冒泡)
+   9. [什么是事件捕获](#什么是事件捕获)
+   10. [阻止事件冒泡](#阻止事件冒泡)
+   11. [阻止事件默认行为](#阻止事件默认行为)
+   12. [什么是事件委托](#什么是事件委托)
+   13. [实现事件模型](#实现事件模型)
+   14. [事件如何派发也就是事件广播（dispatchEvent）](#js-7)
+   15. [函数节流](#函数节流)
+   16. [设计模式](#设计模式)
+   17. [get && post](#js-12)
+   18. [如何进行跨域](#如何进行跨域)
+   19. [JavaScript把一个参数从页面A传递给页面B，进行某些操作，然后由页面B回传给页面A](#js-14)
+   20. [JSON是什么?](#js-15)
+   21. [如何把JS对象与JSON对象相互转换](#如何把JS对象与JSON对象相互转换)
+   22. [数组和对象之间的关系是什么](#数组和对象之间的关系是什么)
+   23. [eval的作用是什么](#eval的作用是什么)
+   24. [如何严格的判断一个数据是数组（Array）类的实例](#js-20)
+   25. [JS中异常捕获](#JS中异常捕获)
+   26. [实现对函数内置的arguments对象进行排序](#实现对函数内置的arguments对象进行排序)
+   27. [为什么文档集合不能直接借用数组类的sort方法进行排序呢？](#js-23)
+   28. [sessionStorage，cookie，localStorage](#js-24)
+   29. [javascript 的数据类型](#js-25)
+   30. [DOM](#js-26)
+   31. [js中使用new操作符做了什么事情](#js-27)
 ----------------------------------
 * [html知识点](#html知识点)
 * [css知识点](#css知识点)
@@ -958,11 +962,7 @@ Json是一种轻量级的数据交换格式
 * 数组中的对象是没有名称的，对象中的数据是有名称的
 * 数组是一种更高效的优化的对象，速度快，效率更高，Object类上的比较少
 
-### call和apply的作用的区别是什么
 
-作用：都是用来改变this关键字的指针的
-
-区别：Call接收参数是一个一个接受的，apply是数组的形式接收的
 
 ### eval的作用是什么
 
