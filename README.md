@@ -3,7 +3,25 @@
 内容持续更新中...
 
 # 目录
+
 ## 1. JavaScript基础
+   1. [DOM（文档对象模型）](http://caibaojian.com/javascript-lessons/2.2-DOM/?q=)
+   2. [JavaScript 基本数据类型和引用数据类型](https://segmentfault.com/a/1190000006752076)
+   3. [JS数据类型判断](https://zhuanlan.zhihu.com/p/129642585)
+   4. [事件冒泡和事件捕获](https://zh.javascript.info/bubbling-and-capturing)
+   5. [js中的事件委托或事件代理详解](https://juejin.im/post/6844903589052153869)
+   6.  [DOM 事件模型](https://juejin.im/post/6844903850323755021)
+   7.  [JS函数防抖和函数节流](https://juejin.im/post/6844903535125987335)
+   8.  [JavaScript 设计模式](https://juejin.im/post/6844904032826294286#heading-61)
+   9.  [跨域解决方案](https://juejin.im/post/6844903767226351623)
+   10. [页面间通信与数据共享](https://juejin.im/post/6844903681595277320)
+   11. [JSON 相关知识点](https://www.sojson.com/json/json_what.html)
+   12. [数组和对象的区别与联系](https://www.jianshu.com/p/08e2e7da6d2d)
+   13. [JS中异常捕获](https://blog.cuiyongjian.com/fe/catch-error/)
+   14. [arguments对象详解](https://zhuanlan.zhihu.com/p/23007032)
+   15. [ Cookie, LocalStorage 与 SessionStorage](https://jerryzou.com/posts/cookie-and-web-storage/)
+  
+## 2. JavaScript 进阶
    1. [JavaScript深入之词法作用域和动态作用域](https://github.com/mqyqingfeng/Blog/issues/3)
    2. [JavaScript深入之执行上下文栈 ](https://github.com/mqyqingfeng/Blog/issues/4)
    3. [JavaScript作用域链 ](./JavaScript基础/JavaScript%20作用域和作用域链.md)
@@ -11,30 +29,16 @@
    5. [JavaScript基础——this](https://github.com/axuebin/articles/issues/6)
    6. [JavaScript基础心法——call apply bind ](https://github.com/axuebin/articles/issues/7)
    7. [JavaScript深入之bind的模拟实现 ](https://github.com/mqyqingfeng/Blog/issues/12)
-   8. [什么是事件冒泡](#什么是事件冒泡)
-   9. [什么是事件捕获](#什么是事件捕获)
-   10. [阻止事件冒泡](#阻止事件冒泡)
-   11. [阻止事件默认行为](#阻止事件默认行为)
-   12. [什么是事件委托](#什么是事件委托)
-   13. [实现事件模型](#实现事件模型)
-   14. [事件如何派发也就是事件广播（dispatchEvent）](#js-7)
-   15. [函数节流](#函数节流)
-   16. [设计模式](#设计模式)
-   17. [get && post](#js-12)
-   18. [如何进行跨域](#如何进行跨域)
-   19. [JavaScript把一个参数从页面A传递给页面B，进行某些操作，然后由页面B回传给页面A](#js-14)
-   20. [JSON是什么?](#js-15)
-   21. [如何把JS对象与JSON对象相互转换](#如何把JS对象与JSON对象相互转换)
-   22. [数组和对象之间的关系是什么](#数组和对象之间的关系是什么)
-   23. [eval的作用是什么](#eval的作用是什么)
-   24. [如何严格的判断一个数据是数组（Array）类的实例](#js-20)
-   25. [JS中异常捕获](#JS中异常捕获)
-   26. [实现对函数内置的arguments对象进行排序](#实现对函数内置的arguments对象进行排序)
-   27. [为什么文档集合不能直接借用数组类的sort方法进行排序呢？](#js-23)
-   28. [sessionStorage，cookie，localStorage](#js-24)
-   29. [javascript 的数据类型](#js-25)
-   30. [DOM](#js-26)
-   31. [js中使用new操作符做了什么事情](#js-27)
+   8. [JavaScript深入之new的模拟实现](https://github.com/mqyqingfeng/Blog/issues/13)
+   9. [Javascript原型链及原型链继承](./JavaScript基础/Javascript原型链及原型链继承.md)
+   10. [JavaScript 中的继承：ES3、ES5 和 ES6](https://juejin.im/post/6844903543476846600)
+   11. [JavaScript Promise](./JavaScript基础/Promise.md)
+   12. [从event loop规范探究javaScript异步及浏览器更新渲染时机](https://github.com/aooy/blog/issues/5)
+   13. [JavaScript 深浅拷贝](https://github.com/axuebin/articles/issues/20)
+   14. [JavaScript 函数式编程](https://github.com/zhaiyy/blog/blob/master/article/Javascript%20%E5%87%BD%E6%95%B0%E5%BC%8F%E7%BC%96%E7%A8%8B.md)
+   15. [PWA - Service Worker](https://github.com/zhaiyy/blog/blob/master/article/%EF%BC%88PWA%EF%BC%89-%20Service%20Worker%20copy.md)
+
+
 ----------------------------------
 * [html知识点](#html知识点)
 * [css知识点](#css知识点)
@@ -614,209 +618,6 @@ Canvas 提供的功能更原始，适合像素处理，动态渲染和大数据�
 
 
 
-
-### 什么是事件冒泡
-
-IE 的事件流就叫做事件冒泡，即事件开始时有最具体的元素接受，然后逐级向上传播到较为不具体的节点
-
-### 什么是事件捕获
-
-不大具体的节点更早的接收到事件，而具体的事件节点最后接受事件。
-
-事件的整体处理过程时，先进行事件的捕获在进行事件冒泡
-
-### 阻止事件冒泡
-
-方法阻止不再派发事件。终止事件在传播过程的捕获、目标处理或起泡阶段进一步传播。调用该方法后，该节点上处理该事件的处理程序将被调用，事件不再被分派到其他节点。
-
- e.stopPropagation()
-
-IE e.cancelBubble()
-
-### 阻止事件默认行为
-
-e.preventDefault
-
-e.returnValue = false
-
-### 什么是事件委托
-
-事件委托，对事件处理程序过多 问题的解决方案
-
-事件委托利用了事件冒泡，例如当click 事件一直冒泡到document 层次，也就是说我们可以为整个页面指定一个click事件处理程序，而不必给每一个可单击的元素分别添加事件处理程序
-
-dom.addEventListener
-
-dom.attachEvent (IE)
-
-优点是：
-
-（1）可以大量节省内存占用，减少事件注册，比如在table上代理所有td的click事件就非常棒
-
-（2）可以实现当新增子对象时无需再次对其绑定事件，对于动态内容部分尤为合适
-
-缺点是：
-
-事件代理的应用常用应该仅限于上述需求下，如果把所有事件都用代理就可能会出现事件误判，即本不应用触发事件的被绑上了事件。
-
-### 实现事件模型
-
-A：大致实现思路就是创建一个类或是匿名函数，在bind和trigger函数外层作用域创建一个字典对象，用于存储注册的事件及响应函数列表，bind时，如果字典没有则创建一个，key是事件名称，value是数组，里面放着当前注册的响应函数，如果字段中有，那么就直接push到数组即可。trigger时调出来依次触发事件响应函数即可。
-
-### <h3 id='js-7'>事件如何派发也就是事件广播（dispatchEvent）</h3>
-
-A：一般我们在元素上绑定事件后，是靠用户在这些元素上的鼠标行为来捕获或者触发事件的，或者自带的浏览器行为事件，比如click，mouseover，load等等，有些时候我们需要自定义事件或者在特定的情况下需要触发这些事件。这个时候我们可以使用IE下fireEvent方法，高级浏览器（chrome,firefox等）有dispatchEvent方法。
-
-ie下的例子：
-
-```
-//document上绑定自定义事件ondataavailable
-
-document.attachEvent('ondataavailable', 'function (event){
-
-alert(event.eventType);
-
-});
-
-var obj = document.getElementById("obj");
-
-//obj元素上绑定click事件
-
-obj.attachEvent('onclick', 'function (event){
-
-alert(event.eventType);
-
-});
-
-//调用document对象的createEventObject方法得到一个event的对象实例。
-
-var event = document.createEventObject();
-
-event.eventType = 'message';
-
-//触发document上绑定的自定义事件ondataavailable
-
-document.fireEvent('ondataavailable', event);
-
-//触发obj元素上绑定click事件
-
-document.getElementById("test").onclick = function() {
-
-  obj.fireEvent('onclick', event);
-
-};
-
-```
-
-
-高级浏览器（chrome,firefox等）的例子：
-
-```
-//document上绑定自定义事件ondataavailable
-
-document.addEventListener('ondataavailable', function(event) {
-
-  alert(event.eventType);
-
-}, false);
-
-var obj = document.getElementById("obj");
-
-//obj元素上绑定click事件
-
-obj.addEventListener('click`, function (event){
-
-alert(event.eventType);
-
-}, false);
-
-//调用document对象的 createEvent 方法得到一个event的对象实例。
-
-var event = document.createEvent('HTMLEvents');
-
-// initEvent接受3个参数：
-
-//事件类型，是否冒泡，是否阻止浏览器的默认行为
-
-event.initEvent("ondataavailable", true, true);
-event.eventType = 'message';
-
-//触发document上绑定的自定义事件ondataavailable
-
-document.dispatchEvent(event);
-
-var event1 = document.createEvent('HTMLEvents');
-
-event1.initEvent("click", true, true);
-
-event1.eventType = 'message';
-
-//触发obj元素上绑定click事件
-
-document.getElementById("test").onclick = function() {
-
-  obj.dispatchEvent(event1);
-
-};
-```
-
-
-
-### Javascript原型链及原型链继承
-
-1. C.prototype 用于建立由new C()创建的对象的原型
-
-* 每一个函数都有一个天生自带的属性：prototype（普通函数也有，只不过没有什么意义）
-
-* 只有在构造函数模式中，才能发挥效果，prototype属性存储的是一个对象数据类型的值
-
-* 这个对象中有一个自己特殊的属性：constructor，其有指回函数自己
-
-2. obj._proto_ 获取obj对象的原型对象的非标准方法，每一个对象数据类型（或实例）天生自带的属性
-
-3. Object.getPrototypeOf(obj)是ES5中用来获取obj对象的原型对象的标准方法
-
-4. Object.hasOwnProperty(obj)用来检查某一个属性是否属于某一个对象的私有属性
-
-javascript继承机制是基于原型，而不是类。简单白话理解即：B如果想继承A的属性和方法，只需要把A的一个实例给B的原型链就可以了
-
-
-### 函数节流
-
-我们聊了聊函数去抖（debounce），去抖的作用简单说是 使连续的函数执行降低到一次（通常情况下此函数为 DOM 事件的回调函数），核心实现也非常简单，重复添加定时器即可.
-
-简单的说，函数节流能使得连续的函数执行，变为 固定时间段 间断地执行。
-
-对于常见的场景，如网页滚动时，经常会有滚动到哪时做什么样的动画效果，遂要注册onscroll事件，如何减少触发次数，到达优化性能，同时又满足效果要求不卡顿，一个是优化事件内代码，减少代码量，二就是做函数节流。
-
-轻轻滚动下窗口，控制台打印了 N 多个 *hello world* 字符串。如果 scroll 回调不是简单的打印字符串，而是涉及一些 DOM 操作，这样频繁的调用，低版本浏览器可能就会直接假死，我们希望回调可以间隔时间段触发，比如上面的例子每 1000ms 打印一次，如何实现之？
-
-```
- //lazyload();
- debounce(lazyload, window);
- };
-
- function debounce(method, context) {
-   clearTimeout(method.timeout);
-   method.timeout = setTimeout(function() {
-     method.call(context);
-   }, 500);
- }
-
- function lazyload() {
-   console.log("scroll执行了" + scrollnum);
- }
-```
-
- underscore **delay**
-
-### 设计模式
-
-* 单例模式
-* 构造函数模式
-* 工厂模式
-* 基于构造函数的原型链模式
-
 ### ajax请求的原理
 
 * 首先创建一个XHR对象
@@ -872,130 +673,9 @@ get请求，浏览器会把header ，data数据一起发送出去，服务器响
 
 post 请求，首先会吧 header 发送出去，然后服务器返回100 continue ，浏览器再把data发送给服务器，服务器响应 200
 
-### 如何进行跨域
-
-只要协议、域名、端口有任何一个不同，都被当作是不同的域
-
-* 是通过在同源域名下架设一个代理服务器来转发，JavaScript负责把请求发送到代理服务器，代理服务器再把结果返回，这样就遵守了浏览器的同源策略。这种方式麻烦之处在于需要服务器端额外做开发
-* JSONP 它有个限制，只能用GET请求，并且要求返回JavaScript。这种方式跨域实际上是利用了浏览器允许跨域引用JavaScript资源。
-
-  即Web页面上调用Js文件时可以不受跨域限制的影响，不仅如此，凡是拥有'src'这个属性的标签都拥有跨域的能力，比如：script, img, iframe标签。
-
-```
-var jsonp = document.createElement('script');
-jsonp.type = 'text/javascript';
-jsonp.src = 'http://www.example.com/remote.js';
-document.getElementsByTagName('head')[0].appendChild(jsonp);
-```
-
-* 通过CORS跨域 ，CORS（Cross-Origin Resource Sharing）跨域资源共享，定义了必须在访问跨域资源时，浏览器与服务器应该如何沟通。CORS背后的基本思想就是使用自定义的HTTP头部让浏览器与服务器进行沟通，从而决定请求或响应是应该成功还是失败。
-
-**因此，实现CORS通信的关键是服务器。只要服务器实现了CORS接口，就可以跨源通信。**
-
-相关Ajax代码可能如下所示：
-
-```
-<script type="text/javascript"\>
-
- var xhr = new XMLHttpRequest();
-
- xhr.open("￼GET", "http://segmentfault.com/u/trigkit4/",true);
-
- xhr.send();
-
-</script>
-
-```
-
-服务器端对于CORS的支持，主要就是通过设置Access-Control-Allow-Origin来进行的。如果浏览器检测到相应的设置，就可以允许Ajax进行跨域的访问。
-
-* CORS和JSONP对比
-  * JSONP只能实现GET请求，而CORS支持所有类型的HTTP请求。
-  * 使用CORS，开发者可以使用普通的XMLHttpRequest发起请求和获得数据，比起JSONP有更好的错误处理。
-  * JSONP主要被老的浏览器支持，它们往往不支持CORS，而绝大多数现代浏览器都已经支持了CORS）。
-
-CORS与JSONP相比，无疑更为先进、方便和可靠。
-
-### <h3 id='js-14'>JavaScript把一个参数从页面A传递给页面B，进行某些操作，然后由页面B回传给页面A</h3>
 
 
-1. 通过 url 传递
-2. html5的话可以用 sessionStorage 或 localStorage很容易的
-
-  * sessionStorage 是会话存储，关闭浏览器就没了
-
-  * localStorage 是持久化存储，完全可以替代cookie 存储空间更大。
-
-  实现方法
-
-  存：sessionStorage["par1"]="123";
-
-  取：sessionStorage["par1"]
-
-  localStorage实现方法和sessionStorage一样
-
-### <h3 id='js-15'>JSON是什么?</h3>
-
-Json是一种轻量级的数据交换格式
-
-基本格式：
-
-数据在键值对中，数据有逗号隔开，花括号保存对象，方括号保存数组。
-
-### 如何把JS对象与JSON对象相互转换
-
-* 把对象转换成json字符串：
-
-`JSON.stringify(obj1)`;
-
-* 把JSON字符串转换成js对象：
-
-`JSON.parse(strJSON)`;
-
-注：如果字符串不是json格式的，会报错
-
-### 数组和对象之间的关系是什么
-
-* 数组是从对象中延伸出来的，数组就是对象
-* 数据集合既可以用数组表示又可以用对象表示
-* 数组是有序的集合，对象是无序的
-* 数组中的对象是没有名称的，对象中的数据是有名称的
-* 数组是一种更高效的优化的对象，速度快，效率更高，Object类上的比较少
-
-
-
-### eval的作用是什么
-
-数据转换引擎，把字符串转换成js表达式，并且让代码执行
-
-
-### <h3 id='js-20'>如何严格的判断一个数据是数组（Array）类的实例</h3>
-`function isArray(val){return val instanceof Array}`
-
-### JS中异常捕获
-`try{}catch(e){}finally{}`
-
-### 实现对函数内置的arguments对象进行排序
-
-```
-[].sort.call(arguments,function(a,b){
-
-return a-b;
-
-})
-```
-
-### <h3 id='js-23'>为什么文档集合不能直接借用数组类的sort方法进行排序呢？</h3>
-
-因为其为类数组，但不是真正的数组，所有就不能直接借用sort的方法
-
-
-### <h3 id='js-24'>sessionStorage，cookie，localStorage</h3>
-
-  * cookie 由服务器生成，可设置失效时间。如果是浏览器端生成的 cookie，则在浏览器关闭之后失效；而 localStorage 除非被清除，否则永久保存，sessionStorage 则在关闭浏览器或者页面之后清除
-  * cookie 的大小为 4k 左右，localStorage 和 sessionStorage 的大小一般为5MB
-  * 与服务器通信的时候，cookie 每次都会携带在 http 头中，但是其他两个不参与服务器通信
-  * cookie 中最好不要放置任何的明文的东西，其他两个的数据如果提交到服务器一定要校验
+。
 
 
 
@@ -1019,7 +699,6 @@ map将遍历的结果映射到一个新的数组，原来的数组不变。each�
 
 1. [es6新增的特性](#es6新增的特性)
 2. [简单介绍一下 const/let](#es6-2)
-3. [简单介绍一下es6中的promise](#简单介绍一下es6中的promise)
 ----------------------------------
 
 ### es6新增的特性
@@ -1038,111 +717,11 @@ map将遍历的结果映射到一个新的数组，原来的数组不变。each�
 * let 是进行 变量的定义，由于 js没有块级作用域的概念，所以 var定义 变量的时候，会出现 作用域泄露的问题。用let定义变量 只会在自己当前的块级作用域内生效。
 * const 是用来定义常量，也就是说定义过的变量是不可更改的
 
-### 简单介绍一下es6中的promise
 
-promise es6新增的异步加载
 
-```
-var promise = new Promise(function(resolve, reject) {
 
-  if (/\* 异步操作成功 \*/) {
 
-    resolve(value);
-  } else {
-    reject(error);
-  }
-});
 
-promise.then(function(value) {
-  // success
-}, function(value) {
-  // failure
-});
-
-```
-
-简易原理
-
-```
-function Promise(fn) {
-    var state = 'pending',
-        value = null,
-        callbacks = [];
-
-    this.then = function (onFulfilled) {
-        if (state === 'pending') {
-            callbacks.push(onFulfilled);
-            return this;
-        }
-        onFulfilled(value);
-        return this;
-    };
-
-    function resolve(newValue) {
-        value = newValue;
-        state = 'fulfilled';
-        setTimeout(function () {
-            callbacks.forEach(function (callback) {
-                callback(value);
-            });
-        }, 0);
-    }
-
-    fn(resolve);
-}
-```
-
-有三个状态 ，成功（resolved） ，加载（pending） ，失败（rejected）
-
-### <h3 id='js-25'>javascirpt 的数据类型</h3>
-
-* 1、基本数据类型（数据结构简单）：
-
- number数字、string字符串、boolean布尔（true、false）  null     undefined
-
-* 2、引用数据类型:
-  * a)object对象数字类型：Object对象、Array数组，RegExp正则，Date时间，Math数学,String字符串对象、Boolean布尔对象
-  * b)function：数据结构复杂
-
-* 3.基本数据类型与引用数据类型的区别：
-
-  基本数据类型的变量存放的是基本类型数据的实际值；而引用数据类型的变量保存对它的引用，即指针。
-
-  引用数据类型：
-    * 首先开辟一个新的空间，将属性名和属性值保存进去
-    * 定义一个变量
-    * 把新开空间的地址当做值给这个变量
-
-### <h3 id='js-26'>DOM</h3>
-
-1、DOM:文档对象模型
-  * 用来描述家庭关系的族谱图
-  * 只要我们获得了一个元素就可以通过属性或方法获得页面中的任何一个元素
-  * 获取元素的方法：
-    * document.getElementById("元素标签的id"); 在整个文档中通过元素标签的id值获取一个元素对象
-    * document.getElementsByTagName("元素标签名") 在整个文档中通过元素的标签名称（li div）获得一组元素（类数组）
-    * document.getElementsByName("元素标签的name属性值") 通过元素标签的name属性值获取一组元素（类数组）
-    * document.getElementByClassName("元素标签的样式class的属性值") 通过元素标签样式的属性值获取一组类数组
-    * document.documentElement获取整个html对象
-    * document.body获取整个body对象
-
-2、DOM常用的属性attribute：
-  * childNodes获取所有的子节点
-  * children获取所有的元素子节点
-  * parentNode获取唯一的父亲
-  * previousSibling获取上一个哥哥节点
-  * nextSibling获取下一个弟弟节点
-  * firstChild获取第一个子节点
-  * lastChild获取最后一个子节点
-
-3、节点node:
-
-  | nodeType:节点类型 | nodeName    | 节点名称node  | Value节点值 |
-  | ---------------  |:----------:| -----------:|-----------:|
-  | 元素节点 | 1 | 大写的标签名 |  （ LIDIV） |
-  | 文本节点 | 3 |  #text     |  文本内容   |
-  | 注释节点 | 8 |  #comment  |  注释内容   |
-  | document | 9 | #document |  null     |
 
 ### <h3 id='js-27'>js中使用new操作符做了什么事情]</h3>
 例：`var obj = new Base(); `
