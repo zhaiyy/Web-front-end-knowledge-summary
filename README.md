@@ -98,7 +98,6 @@
   2. [不容错过的 Babel7 知识](https://juejin.im/post/6844904008679686152)
   3. [前端工程师的自我修养-关于 Babel 那些事儿](https://juejin.im/post/6844904079118827533)
 
-  ### 6.3 模板引擎
 
 ## 7. TypeScript
 
@@ -133,9 +132,7 @@
 
 ## 10. 性能优化
 * [preload 预加载](https://juejin.im/post/6844903562070196237)
-* 图片懒加载
-* cdn 加速
-* js 打包优化
+* [性能优化](https://juejin.im/post/6844903613819518990)
 
 ## 11.安全
 * [XSS攻击](https://tech.meituan.com/2018/09/27/fe-security.html)
