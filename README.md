@@ -133,8 +133,12 @@
 ## 10. 性能优化
 * [preload 预加载](https://juejin.im/post/6844903562070196237)
 * [性能优化](https://juejin.im/post/6844903613819518990)
+* [h5 白屏性能优化](https://juejin.im/entry/6844903491656220686)
 
 ## 11.安全
 * [XSS攻击](https://tech.meituan.com/2018/09/27/fe-security.html)
 * [CSRF攻击](https://tech.meituan.com/2018/10/11/fe-security-csrf.html)
-* [代码保护](https://www.freebuf.com/articles/web/102269.html)
+
+## 12.代码检测
+## 13.上线部署
+## 14.前端监控
