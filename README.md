@@ -1,8 +1,6 @@
 # 前端知识点总结
 
 内容持续更新中...
-<iframe src="https://baidu.com" width="700px" height="500px" frameborder="0" scrolling="no"> </iframe>
-
 
 # 目录
 
