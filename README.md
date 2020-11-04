@@ -98,7 +98,10 @@
   2. [不容错过的 Babel7 知识](https://juejin.im/post/6844904008679686152)
   3. [前端工程师的自我修养-关于 Babel 那些事儿](https://juejin.im/post/6844904079118827533)
 
-
+### 6.3 微前端
+  1. [微前端-最容易看懂的微前端知识](https://juejin.im/post/6844904162509979662)
+  2. [微前端在美团外卖的实践](https://tech.meituan.com/2020/02/27/meituan-waimai-micro-frontends-practice.html)
+   
 ## 7. TypeScript
 
 * [从 JavaScript 到 TypeScript](https://juejin.im/post/6844903485977133069)
