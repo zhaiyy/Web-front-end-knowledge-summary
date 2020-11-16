@@ -62,9 +62,10 @@
    11. [JavaScript Promise](./JavaScript基础/Promise.md)
    12. [从event loop规范探究javaScript异步及浏览器更新渲染时机](https://github.com/aooy/blog/issues/5)
    13. [JavaScript 深浅拷贝](https://github.com/axuebin/articles/issues/20)
-   14. [JavaScript 函数式编程](https://github.com/zhaiyy/blog/blob/master/article/Javascript%20%E5%87%BD%E6%95%B0%E5%BC%8F%E7%BC%96%E7%A8%8B.md)
-   15. [PWA - Service Worker](https://github.com/zhaiyy/blog/blob/master/article/%EF%BC%88PWA%EF%BC%89-%20Service%20Worker%20copy.md)
-   16. [JavaScript 经典面试题库](./JavaScript基础/JS经典面试布局题库.md)
+   14. [深入浅出Object.defineProperty()](https://www.jianshu.com/p/8fe1382ba135)
+   15. [JavaScript 函数式编程](https://github.com/zhaiyy/blog/blob/master/article/Javascript%20%E5%87%BD%E6%95%B0%E5%BC%8F%E7%BC%96%E7%A8%8B.md)
+   16. [PWA - Service Worker](https://github.com/zhaiyy/blog/blob/master/article/%EF%BC%88PWA%EF%BC%89-%20Service%20Worker%20copy.md)
+   17. [JavaScript 经典面试题库](./JavaScript基础/JS经典面试布局题库.md)
 
 ## 5. [VUE 基础](https://ustbhuangyi.github.io/vue-analysis/v2/data-driven/new-vue.html#%E6%80%BB%E7%BB%93)
   1. [vue双向数据绑定MVVM](https://github.com/DMQ/mvvm)
