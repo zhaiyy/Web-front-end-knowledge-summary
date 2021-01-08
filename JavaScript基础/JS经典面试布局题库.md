@@ -283,4 +283,50 @@ for(i=0;i++<3;){
 ```
 答案：4 4 4
 
+## **17.**
+```js
+console.log('start')
+
+setTimeout( function () {
+  console.log('setTimeout')
+}, 0 )
+
+Promise.resolve().then(function() {
+  console.log('promise1');
+}).then(function() {
+  console.log('promise2');
+});
+
+console.log('end')
+
+// start
+// end
+// promise1
+// promise2
+// setTimeout
+```
+## 18.
+
+```js
+Promise.resolve().then(function promise1 () {
+       console.log('promise1');
+    })
+setTimeout(function setTimeout1 (){
+    console.log('setTimeout1')
+    Promise.resolve().then(function  promise2 () {
+       console.log('promise2');
+    })
+}, 0)
+
+setTimeout(function setTimeout2 (){
+   console.log('setTimeout2')
+}, 0)
+
+// promise1
+// setTimeout1
+// promise2
+// setTimeout2
+
+```
+
 ## [>> 查看更多](../README.md)
