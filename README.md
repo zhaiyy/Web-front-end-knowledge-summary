@@ -2,6 +2,7 @@
   推荐阅读
   1. [web前端面试 - 面试官系列](https://vue3js.cn/interview/)
   2. [每天一道面试题](http://static.kancloud.cn/freya001/interview/1224405)
+  3. [五年前端三年面试](https://fe.azhubaby.com/React/Hooks.html)
   
   
 # 目录
@@ -96,8 +97,14 @@
   12. [vue 与 react 对比](https://www.html.cn/qa/react/18726.html)
 
 ## 6. [React 基础](https://juejin.cn/post/6941546135827775525)
-  1.[React事件机制](https://developer.51cto.com/article/668958.html)
-  2.[]
+  1. [React事件机制](https://developer.51cto.com/article/668958.html)
+  2. [React生命周期](https://juejin.cn/post/6914112105964634119)
+  3. [React高阶组件](https://www.jianshu.com/p/70b230559db7)
+  4. [React Hooks 及钩子函数](https://fe.azhubaby.com/React/Hooks.html)
+  5. [React 高阶组件、Render props 和 hooks 有什么区别](https://juejin.cn/post/6867344056142594062)
+  6. [React diff的原理](https://vue3js.cn/interview/React/diff.html#%E4%B8%80%E3%80%81%E6%98%AF%E4%BB%80%E4%B9%88)
+  7. [Vue和React的区别]()（[参考1](https://toutiao.io/posts/41gyoa7/preview)、[参考2](https://zhuanlan.zhihu.com/p/100228073)）
+  
 
 ## 7. 工程化
   ### 7.1 webpack
