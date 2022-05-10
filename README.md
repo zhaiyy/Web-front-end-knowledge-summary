@@ -5,20 +5,20 @@
   
   
 # 目录
- * [1. html基础](#1)
- * [2. CSS 基础](#2)
- * [3. JavaScript基础](#3)
- * [4. JavaScript 进阶](#4)
- * [5. VUE 基础](#5)
- * [6. React 基础](#6)
- * [7. 工程化](#7)
- * [8. TypeScript](#8)
- * [9.计算机网络](#9)
- * [10. 算法程序与数据结构](#10)
- * [11. 性能优化](#11)
+ * [1. html基础](#1-html基础)
+ * [2. CSS 基础](#2-css-基础)
+ * [3. JavaScript基础](#3-javascript基础)
+ * [4. JavaScript 进阶](#4-javascript-进阶)
+ * [5. VUE 基础](#5-vue-基础)
+ * [6. React 基础](#6-react-基础)
+ * [7. 工程化](#7-工程化)
+ * [8. TypeScript](#8-typescript)
+ * [9.计算机网络](#9计算机网络)
+ * [10. 算法程序与数据结构](#10-算法程序与数据结构)
+ * [11. 性能优化](#11-性能优化)
  * [12.安全](#12-安全)
 
-## [1](#1). html基础
+## 1. html基础
   1. [行内元素和块级元素](https://www.jianshu.com/p/d69878549d92)
   2. [html5新增的属性](https://juejin.im/post/6844903878857588750)
   3. [js在微信、微博、QQ、Safari唤起App的解决方案](https://juejin.im/post/6844903650007973901)
@@ -26,7 +26,7 @@
   5. [App的三种开发模式](https://www.jianshu.com/p/e4375cbad16e)
   6. [浏览器的回流与重绘 (Reflow & Repaint)](https://juejin.im/post/6844903569087266823)
 
-## [2](#2). CSS 基础
+## 2. CSS 基础
   1. [CSS 选择器](http://www.ruanyifeng.com/blog/2009/03/css_selectors.html)
   2. [CSS flex 使用](./css基础/css%20flex%20的用法.md)
   3. [CSS 属性 position 定位详解](https://www.ruanyifeng.com/blog/2019/11/css-position.html)
@@ -44,7 +44,7 @@
   16. [CSS 经典面试布局题库](./css基础/CSS%20经典面试布局题库.md)
 
 
-## [3](#3). JavaScript基础
+## 3. JavaScript基础
    1. [DOM（文档对象模型）](http://caibaojian.com/javascript-lessons/2.2-DOM/?q=)
    2. [JavaScript 基本数据类型和引用数据类型](https://segmentfault.com/a/1190000006752076)
    3. [JS数据类型判断](https://zhuanlan.zhihu.com/p/129642585)
@@ -61,7 +61,7 @@
    14. [arguments对象详解](https://zhuanlan.zhihu.com/p/23007032)
    15. [ Cookie, LocalStorage 与 SessionStorage](https://jerryzou.com/posts/cookie-and-web-storage/)
   
-## [4](#4). JavaScript 进阶
+## 4. JavaScript 进阶
    1. [JavaScript深入之词法作用域和动态作用域](https://github.com/mqyqingfeng/Blog/issues/3)
    2. [JavaScript深入之执行上下文栈 ](https://github.com/mqyqingfeng/Blog/issues/4)
    3. [JavaScript作用域链 ](./JavaScript基础/JavaScript%20作用域和作用域链.md)
@@ -81,7 +81,7 @@
    16. [PWA - Service Worker](https://github.com/zhaiyy/blog/blob/master/article/%EF%BC%88PWA%EF%BC%89-%20Service%20Worker%20copy.md)
    17. [JavaScript 经典面试题库](./JavaScript基础/JS经典面试布局题库.md)
 
-## [5](#5). [VUE 基础](https://ustbhuangyi.github.io/vue-analysis/v2/data-driven/new-vue.html#%E6%80%BB%E7%BB%93)
+## 5. [VUE 基础](https://ustbhuangyi.github.io/vue-analysis/v2/data-driven/new-vue.html#%E6%80%BB%E7%BB%93)
   1. [vue双向数据绑定MVVM](https://github.com/DMQ/mvvm)
   2. [vue 生命周期](https://juejin.im/entry/6844903602356502542)
   3. [vue 数据监听](https://www.jianshu.com/p/311bb4541336)
@@ -95,11 +95,11 @@
   11. [vue3 新特性](https://juejin.im/post/6867123074148335624)
   12. [vue 与 react 对比](https://www.html.cn/qa/react/18726.html)
 
-## [6](#6). [React 基础](https://juejin.cn/post/6941546135827775525)
+## 6. [React 基础](https://juejin.cn/post/6941546135827775525)
   1.[React事件机制](https://developer.51cto.com/article/668958.html)
   2.[]
 
-## [7](#7). 工程化
+## 7. 工程化
   ### 7.1 webpack
   1. [webpack 编译流程](https://mp.weixin.qq.com/s?__biz=MzI0MTUxOTE5NQ==&mid=2247484030&idx=1&sn=d630d4b3995bbfd50f99e781074acfeb)
   2. [webpack Loader](https://github.com/axuebin/articles/issues/38)
@@ -123,14 +123,14 @@
   
  
    
-## [8](#8). TypeScript
+## 8. TypeScript
 
 * [从 JavaScript 到 TypeScript](https://juejin.im/post/6844903485977133069)
 * [TypeScript 是什么【附两题 TS 相关面试题】](https://mp.weixin.qq.com/s/OypiN7HOlUBprYUjJs_Rqw)
 
 
 
-## [9](#9).计算机网络
+## 9.计算机网络
 
 **索引**
 
@@ -151,12 +151,12 @@
 
 
 
-## [10](#10). 算法程序与数据结构
+## 10. 算法程序与数据结构
 
 * [前端笔试&面试爬坑系列---算法](https://juejin.im/post/6844903656865677326)
 * [经典面试题](./算法与数据结构/经典面试题.md)
 
-## [11](#11). 性能优化
+## 11. 性能优化
 * [preload 预加载](https://juejin.im/post/6844903562070196237)
 * [性能优化](https://juejin.im/post/6844903613819518990)
 * [h5 白屏性能优化](https://juejin.im/entry/6844903491656220686)
