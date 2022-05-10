@@ -104,6 +104,7 @@
   5. [React 高阶组件、Render props 和 hooks 有什么区别](https://juejin.cn/post/6867344056142594062)
   6. [React diff的原理](https://vue3js.cn/interview/React/diff.html#%E4%B8%80%E3%80%81%E6%98%AF%E4%BB%80%E4%B9%88)
   7. [Vue和React的区别]()（[参考1](https://toutiao.io/posts/41gyoa7/preview)、[参考2](https://zhuanlan.zhihu.com/p/100228073)）
+  8. [redux全面详解](https://juejin.cn/post/6844903889645355015)
   
 
 ## 7. 工程化
