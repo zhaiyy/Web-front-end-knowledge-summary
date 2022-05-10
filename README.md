@@ -16,7 +16,7 @@
  * [9.计算机网络](#9)
  * [10. 算法程序与数据结构](#10)
  * [11. 性能优化](#11)
- * [12.安全](#12)
+ * [12.安全](#安全)
 
 ## [1](#1). html基础
   1. [行内元素和块级元素](https://www.jianshu.com/p/d69878549d92)
@@ -161,7 +161,7 @@
 * [性能优化](https://juejin.im/post/6844903613819518990)
 * [h5 白屏性能优化](https://juejin.im/entry/6844903491656220686)
 
-## [12](#12).安全
+## [12](#安全).安全
 * [XSS攻击](https://tech.meituan.com/2018/09/27/fe-security.html)
 * [CSRF攻击](https://tech.meituan.com/2018/10/11/fe-security-csrf.html)
 
