@@ -1,11 +1,24 @@
 # 前端知识点总结
-
-内容持续更新中...
-
+  推荐阅读
+  1. [web前端面试 - 面试官系列](https://vue3js.cn/interview/)
+  2. [每天一道面试题](http://static.kancloud.cn/freya001/interview/1224405)
+  
+  
 # 目录
+ * [1. html基础](#1)
+ * [2. CSS 基础](#2)
+ * [3. JavaScript基础](#3)
+ * [4. JavaScript 进阶](#4)
+ * [5. VUE 基础](#5)
+ * [6. React 基础](#6)
+ * [7. 工程化](#7)
+ * [8. TypeScript](#8)
+ * [9.计算机网络](#9)
+ * [10. 算法程序与数据结构](#10)
+ * [11. 性能优化](#11)
+ * [12.安全](#12)
 
-
-## 1. html基础
+## [1](#1). html基础
   1. [行内元素和块级元素](https://www.jianshu.com/p/d69878549d92)
   2. [html5新增的属性](https://juejin.im/post/6844903878857588750)
   3. [js在微信、微博、QQ、Safari唤起App的解决方案](https://juejin.im/post/6844903650007973901)
@@ -13,7 +26,7 @@
   5. [App的三种开发模式](https://www.jianshu.com/p/e4375cbad16e)
   6. [浏览器的回流与重绘 (Reflow & Repaint)](https://juejin.im/post/6844903569087266823)
 
-## 2. CSS 基础
+## [2](#2). CSS 基础
   1. [CSS 选择器](http://www.ruanyifeng.com/blog/2009/03/css_selectors.html)
   2. [CSS flex 使用](./css基础/css%20flex%20的用法.md)
   3. [CSS 属性 position 定位详解](https://www.ruanyifeng.com/blog/2019/11/css-position.html)
@@ -31,7 +44,7 @@
   16. [CSS 经典面试布局题库](./css基础/CSS%20经典面试布局题库.md)
 
 
-## 3. JavaScript基础
+## [3](#3). JavaScript基础
    1. [DOM（文档对象模型）](http://caibaojian.com/javascript-lessons/2.2-DOM/?q=)
    2. [JavaScript 基本数据类型和引用数据类型](https://segmentfault.com/a/1190000006752076)
    3. [JS数据类型判断](https://zhuanlan.zhihu.com/p/129642585)
@@ -48,7 +61,7 @@
    14. [arguments对象详解](https://zhuanlan.zhihu.com/p/23007032)
    15. [ Cookie, LocalStorage 与 SessionStorage](https://jerryzou.com/posts/cookie-and-web-storage/)
   
-## 4. JavaScript 进阶
+## [4](#4). JavaScript 进阶
    1. [JavaScript深入之词法作用域和动态作用域](https://github.com/mqyqingfeng/Blog/issues/3)
    2. [JavaScript深入之执行上下文栈 ](https://github.com/mqyqingfeng/Blog/issues/4)
    3. [JavaScript作用域链 ](./JavaScript基础/JavaScript%20作用域和作用域链.md)
@@ -68,7 +81,7 @@
    16. [PWA - Service Worker](https://github.com/zhaiyy/blog/blob/master/article/%EF%BC%88PWA%EF%BC%89-%20Service%20Worker%20copy.md)
    17. [JavaScript 经典面试题库](./JavaScript基础/JS经典面试布局题库.md)
 
-## 5. [VUE 基础](https://ustbhuangyi.github.io/vue-analysis/v2/data-driven/new-vue.html#%E6%80%BB%E7%BB%93)
+## [5](#5). [VUE 基础](https://ustbhuangyi.github.io/vue-analysis/v2/data-driven/new-vue.html#%E6%80%BB%E7%BB%93)
   1. [vue双向数据绑定MVVM](https://github.com/DMQ/mvvm)
   2. [vue 生命周期](https://juejin.im/entry/6844903602356502542)
   3. [vue 数据监听](https://www.jianshu.com/p/311bb4541336)
@@ -82,8 +95,12 @@
   11. [vue3 新特性](https://juejin.im/post/6867123074148335624)
   12. [vue 与 react 对比](https://www.html.cn/qa/react/18726.html)
 
-## 6. 工程化
-  ### 6.1 webpack
+## [6](#6). [React 基础](https://juejin.cn/post/6941546135827775525)
+  1.[React事件机制](https://developer.51cto.com/article/668958.html)
+  2.[]
+
+## [7](#7). 工程化
+  ### 7.1 webpack
   1. [webpack 编译流程](https://mp.weixin.qq.com/s?__biz=MzI0MTUxOTE5NQ==&mid=2247484030&idx=1&sn=d630d4b3995bbfd50f99e781074acfeb)
   2. [webpack Loader](https://github.com/axuebin/articles/issues/38)
   3. [如何开发webpack loader](https://github.com/zhaiyy/blog/blob/master/article/webpack%20loader.md)
@@ -94,22 +111,26 @@
   8. [webpack 5 ModuleFederationPlugin vue 项目初体验](https://juejin.im/post/6883408771322740743)
   8. [vite](https://juejin.im/post/6869915676501835783#heading-6)
 
-  ### 6.2 Babel
+  ### 7.2 Babel
 
   1. [一篇文章了解前端开发必须懂的 Babel](https://mp.weixin.qq.com/s/C-WmM5tjfc3r4sB52C4R0Q)
   2. [不容错过的 Babel7 知识](https://juejin.im/post/6844904008679686152)
   3. [前端工程师的自我修养-关于 Babel 那些事儿](https://juejin.im/post/6844904079118827533)
 
-### 6.3 微前端
+  ### 7.3 微前端
   1. [微前端-最容易看懂的微前端知识](https://juejin.im/post/6844904162509979662)
   2. [微前端在美团外卖的实践](https://tech.meituan.com/2020/02/27/meituan-waimai-micro-frontends-practice.html)
+  
+ 
    
-## 7. TypeScript
+## [8](#8). TypeScript
 
 * [从 JavaScript 到 TypeScript](https://juejin.im/post/6844903485977133069)
 * [TypeScript 是什么【附两题 TS 相关面试题】](https://mp.weixin.qq.com/s/OypiN7HOlUBprYUjJs_Rqw)
 
-## 8.计算机网络
+
+
+## [9](#9).计算机网络
 
 **索引**
 
@@ -130,20 +151,20 @@
 
 
 
-## 9. 算法程序与数据结构
+## [10](#10). 算法程序与数据结构
 
 * [前端笔试&面试爬坑系列---算法](https://juejin.im/post/6844903656865677326)
 * [经典面试题](./算法与数据结构/经典面试题.md)
 
-## 10. 性能优化
+## [11](#11). 性能优化
 * [preload 预加载](https://juejin.im/post/6844903562070196237)
 * [性能优化](https://juejin.im/post/6844903613819518990)
 * [h5 白屏性能优化](https://juejin.im/entry/6844903491656220686)
 
-## 11.安全
+## [12](#12).安全
 * [XSS攻击](https://tech.meituan.com/2018/09/27/fe-security.html)
 * [CSRF攻击](https://tech.meituan.com/2018/10/11/fe-security-csrf.html)
 
-## 12.代码检测
-## 13.上线部署
-## 14.前端监控
+## 13.代码检测
+## 14.上线部署
+## 15.前端监控
